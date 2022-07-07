@@ -1,0 +1,15 @@
+<h1>Articles#index</h1>
+
+<ul>
+  <% @articles.each do |article| %>
+    <% unless article.draft? %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+
+<%= link_to "New Article", new_article_path %><br>
+<li><a href="/">Home page</a></li>

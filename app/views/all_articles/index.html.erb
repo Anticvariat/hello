@@ -1,16 +1,12 @@
-<h1>Мои статьи</h1>
-
-
+<h2>Articles</h2>
 <ul>
   <% @articles.each do |article| %>
-  <% if current_user.id == article.user_id %>
     <% unless article.draft? %>
       <li>
         <%= link_to article.title, article %>
       </li>
     <% end %>
-    <% end %>
   <% end %>
 </ul>
-
-<%= link_to "Создать статью", new_article_path %><br>
+<%= paginate @articles, window: 2 %>
+<%= link_to "Создать статью", new_article_path %>

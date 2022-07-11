@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
 root "home#index"
 
+resources :articles
+resources :drafts
+
 devise_for :users
 
 devise_scope :user do  

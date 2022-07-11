@@ -1,0 +1,18 @@
+<h1>Articles#index</h1>
+
+
+<ul>
+  <% @articles.each do |article| %>
+  <% if current_user.id == article.user_id %>
+    <% unless article.draft? %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    <% end %>
+    <% end %>
+  <% end %>
+</ul>
+
+
+<%= link_to "New Article", new_article_path %><br>
+<li><a href="/">Home page</a></li>

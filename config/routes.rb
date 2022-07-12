@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
 root "home#index"
-#get "all_articles#index"
 
+get 'about_me', to: 'about_me#index'
 get 'about_me/contact_me', to: 'about_me#contact_me'
 
 resources :articles

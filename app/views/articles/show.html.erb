@@ -2,8 +2,8 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.body %></p>
 <% if current_user.id == @article.user_id %>
-    <%= link_to "Редактировать", edit_article_path(@article) %>   
-    <li><a href="/articles/">К моим статьям</a></li>
+    <%= link_to "Редактировать", edit_article_path(@article) %><br>
+    <%= link_to "К моим статьям", articles_path %><br>
 <% end %>
 <% else %>
 <% if current_user.id == @article.user_id %>

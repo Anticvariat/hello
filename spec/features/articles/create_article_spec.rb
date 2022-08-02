@@ -5,7 +5,6 @@ require 'rails_helper'
 RSpec.describe 'Create Article' do
   let(:user) { create(:user) }
 
-  context 'create Article' do
     it 'is valid' do
       sign_in user
       visit new_article_path
@@ -14,5 +13,4 @@ RSpec.describe 'Create Article' do
       click_button 'Create Article'
       expect(page).to have_content 'К моим статьям'
     end
-  end
 end

@@ -8,7 +8,7 @@ RSpec.describe 'Log in' do
     it 'is valid' do
       visit root_path
       click_on 'Войти'
-      fill_in 'Email', with: 'example@mail.ru'
+      fill_in 'Email', with: user.email
       fill_in 'Password', with: '123456'
       click_button 'Log in'
       expect(page).to have_content 'Home page'

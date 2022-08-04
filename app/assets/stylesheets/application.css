@@ -1,70 +1,70 @@
-.container {
-
+:root {
+  --background-color: #111;
+  --color: #008b8b;
 }
 
 .sidebar {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 200px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #111; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 10px;
+  background-color: var(--background-color);
   font-family: monospace;
-  font-size: 22;
-}
-.main {
-  margin-left: 200px; /* Same as the width of the sidebar */
-  padding: 0px 10px;
-}
-
-.alert {
-  margin-left: 200px; /* Same as the width of the sidebar */
-  padding: 0px 10px;
-}
-
-.notice {
-  margin-left: 200px; /* Same as the width of the sidebar */
-  padding: 0px 10px;
-}
-
-header::after {
-    display: table;
-    clear: both;
-
-
-}
-
-.navbar nav {
-    float: center;
-
-}
-
-.navbar nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.navbar nav li {
-    display: inline-block;
-    margin-left: 20px;
-    padding-top: 10px;
-}
-.navbar nav a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 22px;
-    font-family: monospace;
-    color: darkcyan;
+  font-size: 22px;
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 10px;
+  position: fixed;
+  top: 0;
+  width: 200px;
+  z-index: 1;
 }
 
 .sidebar nav a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-family: monospace;
-    color: darkcyan;
+  color: var(--color);
+  font-family: monospace;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.main {
+  margin-left: 200px;
+  padding: 0 10px;
+}
+
+.alert {
+  margin-left: 200px;
+  padding: 0 10px;
+}
+
+.notice {
+  margin-left: 200px;
+  padding: 0 10px;
+}
+
+header::after {
+  clear: both;
+  display: table;
+}
+
+.navbar nav {
+  float: center;
+}
+
+.navbar nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar nav li {
+  display: inline-block;
+  margin-left: 20px;
+  padding-top: 10px;
+}
+
+.navbar nav a {
+  color: var(--color);
+  font-family: monospace;
+  font-size: 22px;
+  text-decoration: none;
+  text-transform: uppercase;
 }

@@ -162,6 +162,11 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.3)
       loofah (~> 2.3)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (6.0.5)
       actionpack (= 6.0.5)
       activesupport (= 6.0.5)
@@ -194,6 +199,7 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.11.0)
+    rubytest (0.8.1)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -221,6 +227,8 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    test (1.0.0)
+      rubytest
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -269,11 +277,13 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 4.1)
   rails (~> 6.0.5)
+  rails_12factor
   rspec-rails (~> 4.0)
   sass-rails (>= 6)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  test (~> 1.0)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)

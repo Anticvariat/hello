@@ -1,8 +1,10 @@
-require "rails_helper"
+# frozen_string_literal: true
+
+require 'rails_helper'
 
 RSpec.describe AllArticlesController, type: :controller do
-  describe "GET index" do
-    it "is valid" do
+  describe 'get index' do
+    it 'is valid' do
       get :index
       expect(response).to have_http_status(200)
     end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-gem "rails_12factor", group: :production
+gem 'rails_12factor', group: :production
 
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
@@ -60,6 +60,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem "test", "~> 1.0"
+gem 'test', '~> 1.0'
 
 ruby '2.7.6'

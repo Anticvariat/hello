@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'Log in' do
   let(:user) { create(:user) }
-  context 'log in' do
-    it 'is valid' do
+  feature 'Sign in' do
+    scenario 'Sign in with correct params' do
       visit root_path
       click_on 'Войти'
       fill_in 'Email', with: user.email

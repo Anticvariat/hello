@@ -19,7 +19,6 @@ gem 'rails_12factor', group: :production
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.4.3'
 gem 'turbolinks', '~> 5'
-gem 'webpacker', '~> 4.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

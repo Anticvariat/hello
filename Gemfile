@@ -16,9 +16,12 @@ gem 'jbuilder', '~> 2.7'
 gem 'kaminari'
 gem 'puma', '~> 4.1'
 gem 'rails_12factor', group: :production
+gem 'rubocop-rails', require: false
 gem 'sass-rails', '>= 6'
+gem 'scss_lint', require: false
+gem 'slim_lint'
 gem 'turbolinks', '~> 5'
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 5.4.3'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

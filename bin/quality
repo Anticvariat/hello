@@ -1,5 +1,9 @@
-rubocop -A
-slim-lint app/views/
-scss-lint app/assets/stylesheets/
-brakeman
-bundle-audit
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+`bin/rubocop -A`
+`bin/slim-lint app/views`
+`bin/scss-lint app/assets/stylesheets/`
+`bin/brakeman`
+`bin/bundle-audit update`
+`bin/bundle-audit`

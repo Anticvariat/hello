@@ -1,0 +1,5 @@
+rubocop -A
+slim-lint app/views/
+scss-lint app/assets/stylesheets/
+brakeman
+bundle-audit

@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 class AboutMeController < ApplicationController
-  def index
-  end
-    def new
-  end
+  def index; end
+
+  def new; end
 
   def create
     OrderMailer.contact_me_mail(contact_me_params).deliver_now

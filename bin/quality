@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-`bin/rubocop -A`
+`bin/rubocop`
 `bin/slim-lint app/views`
 `bin/scss-lint app/assets/stylesheets/`
 `bin/brakeman`

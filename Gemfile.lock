@@ -221,6 +221,8 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
+    rubocop-rspec (2.12.1)
+      rubocop (~> 1.31)
     ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
     sass (3.7.4)
@@ -317,6 +319,7 @@ DEPENDENCIES
   rails_12factor
   rspec-rails (~> 4.0)
   rubocop-rails
+  rubocop-rspec
   sass-rails (>= 6)
   scss_lint
   selenium-webdriver

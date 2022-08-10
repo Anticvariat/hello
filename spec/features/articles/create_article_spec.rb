@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Create Article' do
   let(:user) { create(:user) }
+
   feature 'Create Article' do
     scenario 'Create Article with correct params' do
       sign_in user

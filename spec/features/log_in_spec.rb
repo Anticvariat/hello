@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Log in' do
   let(:user) { create(:user) }
+
   feature 'Sign in' do
     scenario 'Sign in with correct params' do
       visit root_path

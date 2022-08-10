@@ -17,6 +17,7 @@ gem 'kaminari'
 gem 'puma', '~> 4.1'
 gem 'rails_12factor', group: :production
 gem 'rubocop-rails', require: false
+gem 'rubocop-rspec', require: false
 gem 'sass-rails', '>= 6'
 gem 'scss_lint', require: false
 gem 'slim_lint'

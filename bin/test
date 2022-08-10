@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# frozen_string_literal: true
+
+bin/rspec spec

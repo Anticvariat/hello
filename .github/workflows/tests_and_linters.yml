@@ -10,7 +10,7 @@ jobs:
           ruby-version: '2.7.6'
       - run: bin/test
 
-        check-linters:
+  check-linters:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

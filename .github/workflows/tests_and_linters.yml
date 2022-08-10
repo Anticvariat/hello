@@ -9,8 +9,7 @@ jobs:
         with:
           ruby-version: '2.7.6'
           bundler-cache: true
-      - run: bundle install
-      - run: bin/rails db:migrate RAILS_ENV=test
+      - run: rake db:setup
       - run: bin/test
 
   check-linters:
@@ -21,5 +20,4 @@ jobs:
         with:
           ruby-version: '2.7.6'
           bundler-cache: true
-      - run: bundle install
       - run: bin/quality

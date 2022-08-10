@@ -1,9 +1,9 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env sh
 # frozen_string_literal: true
 
-`bin/rubocop`
-`bin/slim-lint app/views`
-`bin/scss-lint app/assets/stylesheets/`
-`bin/brakeman`
-`bin/bundle-audit update`
-`bin/bundle-audit`
+bin/rubocop
+bin/slim-lint app/views
+bin/scss-lint app/assets/stylesheets/
+bin/brakeman
+bin/bundle-audit update
+bin/bundle-audit

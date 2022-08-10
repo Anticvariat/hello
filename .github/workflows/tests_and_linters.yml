@@ -8,8 +8,10 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.7.6'
-          bundler-cache: true
+      - name: Install dependencies
+        run: bundle install
       - run: rake db:setup
+      - name: Run tests
       - run: bin/test
 
   check-linters:
@@ -19,5 +21,7 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.7.6'
-          bundler-cache: true
+      - name: Install dependencies
+        run: bundle install
+      - name: Run linters
       - run: bin/quality

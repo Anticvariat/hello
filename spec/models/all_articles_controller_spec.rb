@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe all_articles_controller_spec.rb, type: :controller do
+RSpec.describe AllArticlesController, type: :controller do
   describe '#index' do
     it 'returns OK status' do
       get :index

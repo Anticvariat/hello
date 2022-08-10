@@ -4,7 +4,7 @@ ruby '2.7.6'
 
 # main gems
 gem 'pg', '~> 1.1'
-gem 'rails', '~> 6.0.5'
+gem 'rails', '~> 6.0.5.1'
 
 # other gems
 source 'https://rubygems.org'

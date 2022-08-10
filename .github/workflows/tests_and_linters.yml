@@ -8,6 +8,7 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.7.6'
+      - run: bundle install
       - run: bin/test
 
   check-linters:
@@ -17,4 +18,5 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.7.6'
+      - run: bundle install
       - run: bin/quality

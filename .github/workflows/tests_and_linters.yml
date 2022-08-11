@@ -3,6 +3,9 @@ on: [push]
 jobs:
   check-tests:
     runs-on: ubuntu-latest
+    env:
+      GMAIL_PASSWORD: gmailpassword
+      GMAIL_USERNAME: gmailusername@gmail.com
     steps:
       - uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
@@ -11,9 +14,6 @@ jobs:
           bundler-cache: true
 
       - run: rake db:setup
-      env:
-        GMAIL_PASSWORD: gmailpassword
-        GMAIL_USERNAME: gmailusername@gmail.com
       - run: bin/test
 
   check-linters:

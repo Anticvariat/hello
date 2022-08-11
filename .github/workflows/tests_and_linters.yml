@@ -3,16 +3,39 @@ on: [push]
 jobs:
   check-tests:
     runs-on: ubuntu-latest
+    constainer: node:10.18-jessie
+
+    services:
+      # Label used to access the service container
+      postgres:
+        # Docker Hub image
+        image: postgres
+        # Provide the password for postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+          GMAIL_PASSWORD: gmailpassword
+          GMAIL_USERNAME: gmailusername@gmail.com
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        
     env:
-      GMAIL_PASSWORD: gmailpassword
-      GMAIL_USERNAME: gmailusername@gmail.com
+      # The hostname used to communicate with the PostgreSQL service container
+      POSTGRES_HOST: postgres
+      # The default PostgreSQL port
+      POSTGRES_PORT: 5432  
     steps:
       - uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7.6'
           bundler-cache: true
-      
+
+      - run: npm ci
+      - run: node client.js
       - run: gem install rake -v 13.0.6
       - run: rake db:setup
       - run: bin/test

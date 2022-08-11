@@ -2,7 +2,6 @@ require:
   - rubocop-rails
   - rubocop-rspec
   - rubocop-discourse
-  - rubocop-performance
 
 AllCops:
   NewCops: enable
@@ -11,13 +10,6 @@ AllCops:
     - db/**/*
     - vendor/**/*
     - tmp/**/*
-
-Rails/UnknownEnv:
-Environments:
-    - production
-    - development
-    - test
-    - staging
 
 Style/Documentation:
   Enabled: false

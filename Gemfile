@@ -17,7 +17,6 @@ gem 'kaminari'
 gem 'puma', '~> 4.1'
 gem 'rails_12factor', group: :production
 gem 'rubocop-discourse', require: false
-gem 'rubocop-performance', require: false
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
 gem 'sass-rails', '>= 6'

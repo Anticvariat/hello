@@ -3,14 +3,16 @@ on:
   push:
     branches:
       - add_cd
-
+      
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      HEROKU_API_KEY: 2b14d459-1830-467b-867a-4a26bf43e17d
     steps:
       - uses: actions/checkout@v3
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
-          heroku_api_key: ${{secrets.2b14d459-1830-467b-867a-4a26bf43e17d}}
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "myapp408"
           heroku_email: "yurta3v@inbox.ru"

@@ -1,0 +1,39 @@
+name: CI
+on: [push]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432
+      RAILS_ENV: test
+
+    services:
+      postgres:
+        image: postgres
+        ports: ['5432:5432']
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Ruby     
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Quality check
+        run: bin/quality
+
+      - name: Setub db
+        run: bin/rails db:setup
+
+      - name: Run tests
+        run: bin/test

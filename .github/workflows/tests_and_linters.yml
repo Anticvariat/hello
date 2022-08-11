@@ -5,21 +5,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7.6'
+          bundler-cache: true
 
-      - run: bundle install
       - run: rake db:setup
+      env:
+        GMAIL_PASSWORD: gmailpassword
+        GMAIL_USERNAME: gmailusername@gmail.com
       - run: bin/test
 
   check-linters:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7.6'
+          bundler-cache: true
 
-      - run: bundle install
       - run: bin/quality

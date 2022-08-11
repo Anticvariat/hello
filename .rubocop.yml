@@ -9,6 +9,15 @@ AllCops:
   Exclude:
     - bin/**/*
     - db/**/*
+    - vendor/**/*
+    - tmp/**/*
+
+Rails/UnknownEnv:
+Environments:
+    - production
+    - development
+    - test
+    - staging
 
 Style/Documentation:
   Enabled: false

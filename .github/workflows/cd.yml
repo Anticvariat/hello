@@ -2,7 +2,7 @@ name: CD
 on:
   push:
     branches:
-      - add_cd
+      - main
 
 jobs:
   build:

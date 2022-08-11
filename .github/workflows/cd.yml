@@ -1,0 +1,16 @@
+name: CD
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.2b14d459-1830-467b-867a-4a26bf43e17d}}
+          heroku_app_name: "myapp408"
+          heroku_email: "yurta3v@inbox.ru"

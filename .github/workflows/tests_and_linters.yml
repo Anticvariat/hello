@@ -12,7 +12,8 @@ jobs:
         with:
           ruby-version: '2.7.6'
           bundler-cache: true
-
+      
+      - run: bundle install
       - run: rake db:setup
       - run: bin/test
 

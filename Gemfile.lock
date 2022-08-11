@@ -220,6 +220,9 @@ GEM
     rubocop-discourse (2.5.0)
       rubocop (>= 1.1.0)
       rubocop-rspec (>= 2.0.0)
+    rubocop-performance (1.14.3)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
     rubocop-rails (2.15.2)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
@@ -322,6 +325,7 @@ DEPENDENCIES
   rails_12factor
   rspec-rails (~> 4.0)
   rubocop-discourse
+  rubocop-performance
   rubocop-rails
   rubocop-rspec
   sass-rails (>= 6)

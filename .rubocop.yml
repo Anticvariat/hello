@@ -2,6 +2,7 @@ require:
   - rubocop-rails
   - rubocop-rspec
   - rubocop-discourse
+  - rubocop-performance
 
 AllCops:
   NewCops: enable

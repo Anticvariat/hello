@@ -6,7 +6,7 @@ class OrderMailer < ApplicationMailer
     @first_name = params[:first_name]
     @message = params[:message_body]
     @email = params[:email]
-    @url = ENV['HOST']
+    @url = ENV.fetch('HOST', nil)
     mail(subject: "#{@first_name} sent you a message")
   end
 end

@@ -9,30 +9,23 @@
 .sidebar {
   background-color: var(--sidebar-color);
   overflow-x: hidden;
-  padding-top: 10px;
   position: fixed;
   top: 0;
   height: 100%;
-  width: 200px;
-  z-index: 1;
+  width: 80px;
+  z-index: 0;
 }
 
 .navbar {
-  margin-left: -10px;
   background-color: var(--navbar-color);
+  text-align: center;
 }
 
-.main {
-  margin-left: 200px;
-  padding-left: 10px;
+.main-content {
+    padding-top: 10px;
+    padding-left: 100px;
 }
 
-.alert {
-  margin-left: 200px;
-  padding: 0 10px;
-}
-
-.notice {
-  margin-left: 200px;
-  padding: 0 10px;
+.mid {
+  text-align: center;
 }

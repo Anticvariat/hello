@@ -1,15 +1,39 @@
 <div class="main">
 	<header>
-	<div class='navbar'>
-	<navb>
-	<ul>
-	<li><%= link_to "Домой", root_path %></li>
-	<% if user_signed_in? %>
-	<li><%= link_to 'Редактировать', edit_user_registration_path, :class => 'navbar-link' %></li>
-    <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
-    <% end %>
-</ul>
-</navb>
-</div>
-</header>
+		<nav class="navbar navbar-expand-lg">
+  			<div class="container-fluid">
+    		<span class="navbar-brand" href="#">Navbar</span>
+    		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+      		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        	<li class="nav-item">
+          	<%= link_to "Домой", root_path, :class => 'nav-link active' %>
+        	</li>
+       		 <% if user_signed_in? %>
+				<li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              	Профиль
+              </a>
+              <ul class="dropdown-menu">
+                 <li class="nav-item">
+       		    <%= link_to 'Мои статьи', articles_path, :class => 'nav-link active'%>
+       			</li>
+                <li class="nav-item">
+   				<%= link_to 'Черновики', drafts_path, :class => 'nav-link active' %>
+   				</li>
+        		<li class="nav-item">
+        		<%= link_to 'Редактировать', edit_user_registration_path, :class => 'nav-link active' %>
+        		</li>
+              </ul>
+            </li>
+        		<li class="nav-item">
+        		<%= link_to 'Выйти', destroy_user_session_path, :class => 'nav-link active', :method => :delete %>
+        		</li>
+
+
+        	<% end %>
+      		</ul>
+    		</div>
+  			</div>
+		</nav>
+	</header>
 </div>

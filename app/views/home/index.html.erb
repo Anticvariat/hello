@@ -1,11 +1,9 @@
+    <div class="homepage">
     <h1>Home page</h1>
 <% if user_signed_in? %>
-    <span>Здравствуйте, <%= current_user.first_name%> <%= current_user.last_name%></span><br>
-    <span>Почта: <%= current_user.email%></span><br>
-    <p>
-    <%= link_to 'Мои статьи', articles_path %>
-    <%= link_to 'Черновики', drafts_path %>
-    </p>
+    <span>Здравствуйте, <%= current_user.first_name%> <%= current_user.last_name%>.</span><br>
+    <span>Ваша почта: <%= current_user.email%></span>
 <% else %>
     <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
 <% end %>
+</div>

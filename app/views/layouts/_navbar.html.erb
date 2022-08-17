@@ -19,21 +19,22 @@
         	<li class="nav-item">
         	<%= link_to 'Редактировать', edit_user_registration_path, :class => 'dropdown-item' %>
         	</li>
+            <li class="nav-item"><hr class="dropdown-divider"></li>
             <li class="nav-item">
             <%= link_to 'Выйти', destroy_user_session_path, :class => 'dropdown-item', :method => :delete %>
             </li>
             </ul>
-            <% else %>
+        <% else %>
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Гость
+                Guest
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
             <li class="nav-item">
-            <%= link_to 'Войти', new_user_session_path, :class => 'nav-link active'%>
+            <%= link_to 'Войти', new_user_session_path, :class => 'dropdown-item'%>
             </li>
             <li class="nav-item">
-            <%= link_to 'Зарегистрироваться', new_user_registration_path, :class => 'nav-link active' %>
+            <%= link_to 'Зарегистрироваться', new_user_registration_path, :class => 'dropdown-item' %>
             </li>
             </ul>
         	<% end %>
@@ -41,35 +42,10 @@
         </div>
         </div>  
 
-<!--         <div>
-            <% if current_page?(root_path) %>
-                <span>Домашняя<span>
-            <% end %>
-            <% if current_page?(all_articles_path) %>
-                <span>Статьи<span>
-            <% end %>
-            <% if current_page?(new_article_path) %>
-                <span>Новая статья<span>
-            <% end %>
-            <% if current_page?(articles_path) %>
-                <span>Мои статьи<span>
-            <% end %>
-            <% if current_page?(drafts_path) %>
-                <span>Черновики<span>
-            <% end %>
-            <% if current_page?(about_me_path) %>
-                <span>Обо мне<span>
-            <% end %>
-             <% if current_page?(about_me_contact_me_path) %>
-                <span>Связаться со мной<span>
-            <% end %>
-        </div> -->
-
-        <div class="d-flex flex-column flex-shrink-0 p-3">
+        <div class="d-flex flex-column flex-shrink-0 p-3 dropstart">
     <div class="dropdown">
       <a class="d-flex align-items-center text-black text-decoration-none dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://avatars.githubusercontent.com/u/101290289?v=4" border="3" width="32" height="32" class="rounded-circle me-2">
-        <strong>Разработчик</strong>
+        <%= image_tag 'info-circle.svg', width: "32", height: "32", alt: "Application Developer", title: "Application Developer" %>
       </a>
       <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
       <li>

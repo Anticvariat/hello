@@ -6,11 +6,28 @@
   --navbar-color: #e3f2fd;
 }
 
+@font-face {
+    font-family: 'AlexBrush-Regular';
+    src: url('AlexBrush-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Athiti-ExtraLight';
+    src: url('Athiti-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FsSongarak1Regular';
+    src: url('FsSongarak1Regular.ttf') format('truetype');
+}
+
+
 .sidebar {
   background-color: var(--sidebar-color);
   overflow-x: hidden;
   position: fixed;
-  top: 0;
   height: 100%;
   width: 80px;
   z-index: 0;
@@ -19,13 +36,125 @@
 .navbar {
   background-color: var(--navbar-color);
   text-align: center;
+  font-family: Athiti-ExtraLight, Tahoma, serif;
+  font-size: 20px;
+}
+
+.nav-item {
+  text-align: center;
+}
+
+.navbar-brand {
+  color: var(--color);
+  font-family: AlexBrush-Regular, Tahoma, serif;
+  font-size: 2em;
+  text-shadow: 1px 0 1px #000, 
+  0 1px 1px #000, 
+  -1px 0 1px #000, 
+  0 -1px 1px #000;
 }
 
 .main-content {
-    padding-top: 10px;
-    padding-left: 100px;
+  padding-top: 10px;
+  padding-left: 100px;
 }
 
+.navbar a {
+  font-falimy: 'FsSongarak1Regular';
+  font-size: 100;
+}
 .mid {
   text-align: center;
+}
+
+.fill {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(65deg) brightness(105%) contrast(103%);
+    margin-bottom: 2em;
+}
+
+.homepage {
+  text-align: center;
+}
+
+.articles {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.form-signup, .form-signin, .form-edit {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-signup .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signup, .form-signin, input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signup input[type="password"] {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signup input[type="first_name"] {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signup input[type="last_name"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-edit input[type="first_name"] {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-edit input[type="last_name"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-edit input[type="password"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-edit input[type="password_confirmation"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-edit input[type="current_password"] {
+  margin-bottom: 10px;
+}
+
+.errors {
+  font-size: 1em;
 }

@@ -1,11 +1,12 @@
-<h1>Articles#drafts</h1>
+<div class="homepage">
+<h1>Мои черновики</h1>
 
-<ul>
+<ol>
   <% @articles.each do |article| %>
   <% if current_user.id == article.user_id %>
     <% unless !article.draft? %>
       <li>
-      	<a href="<%= article_path(article) %>/edit">
+      	<a href="<%= edit_article_path(article) %>">
         <%= article.title %>
       </li>
     <% end %>
@@ -14,5 +15,5 @@
 
 
 
-</ul>
-<%= link_to "Домой", root_path %>
+</ol>
+</div>

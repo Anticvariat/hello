@@ -3,7 +3,10 @@
 :root {
   --sidebar-color: #111;
   --color: #ffffff;
-  --navbar-color: #e3f2fd;
+  --navbar-color: #7fc7ff;
+  --article-back: #7fc7ff;
+  --black: #000000;
+  --grey: grey;
 }
 
 @font-face {
@@ -26,43 +29,82 @@
 
 .sidebar {
   background-color: var(--sidebar-color);
+  margin-top: 80px;
   overflow-x: hidden;
-  position: fixed;
   height: 100%;
   width: 80px;
   z-index: 0;
 }
 
-.navbar {
+.navb {
   background-color: var(--navbar-color);
-  text-align: center;
-  font-family: Athiti-ExtraLight, Tahoma, serif;
+}
+
+.dropdown-toggle {
   font-size: 20px;
+  font-family: Athiti-ExtraLight, Tahoma, serif;
 }
 
-.nav-item {
-  text-align: center;
+.navbar-image {
+  margin-left: 1.2em;
+  margin-right: 0.5em;
 }
 
-.navbar-brand {
+.logo {
   color: var(--color);
   font-family: AlexBrush-Regular, Tahoma, serif;
-  font-size: 2em;
-  text-shadow: 1px 0 1px #000, 
-  0 1px 1px #000, 
-  -1px 0 1px #000, 
-  0 -1px 1px #000;
+  font-size: 3em;
+  text-shadow: 1.5px 0 1.5px #000, 
+  0 1.5px 1.5px #000, 
+  -1.5px 0 1.5px #000, 
+  0 -1.5px 1.5px #000;
+  text-decoration: none;
 }
 
 .main-content {
-  padding-top: 10px;
+  padding-top: 100px;
   padding-left: 100px;
 }
 
-.navbar a {
-  font-falimy: 'FsSongarak1Regular';
-  font-size: 100;
+.blog-post {
+  margin-left: 300px;
+  margin-right: 300px;
+  padding: 30px;
+  color: var(--black);
+  background: linear-gradient(40deg, var(--navbar-color) 35%, #ddddff);
+  border-radius: 25px ;
+
 }
+
+.blog-post-title {
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.blog-post-meta {
+  text-align: right;
+  display: block;
+  float: right;
+  color: var(--grey);
+  font-size: 14px;
+}
+
+.article a {
+  font-size: 36px;
+  color: var(--black);
+  font-family: Athiti-ExtraLight, Tahoma, serif;
+  text-decoration: none;
+}
+
+.pagi a {
+  margin-left: 200px;
+  font-size: 100px;
+  color: var(--black);
+  text-decoration: none;
+  text-align: center;
+}
+
 .mid {
   text-align: center;
 }

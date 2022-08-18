@@ -1,12 +1,14 @@
-<h1 class="homepage">Список статей</h1>
-<div class="articles">
-<ol >
+<div>
+<h1 class="mid">Список статей</h1>
+<article class="blog-post">
   <% @articles.each do |article| %>
     <% unless article.draft? %>
-        <li><%= link_to article.title, article %></li>
+        <h2 class="blog-post-title mb-1 article">
+          <%= link_to article.title, article %>  <p class="blog-post-meta "><%= article.user.first_name %> <%= article.user.last_name%><br><%= article.created_at.strftime("%d.%m.%Y в %H:%M")%></p>
+           
+        </h2>
+        <hr>
     <% end %>
   <% end %>
-</ol >
-
-</div>
-<h2 class="homepage"><%= paginate @articles, window: 2 %></p>
+</article>
+<%= paginate @articles, window: 2, class: "pagi" %>

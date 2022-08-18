@@ -1,4 +1,4 @@
-<div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-bg-dark">
+<div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-bg-dark fixed-top">
 <ul class="nav nav-pills flex-column mb-auto">
   <li>
     <div class="mid">
@@ -15,11 +15,18 @@
         <% end %>
       <% end %>
 
-      <% if current_page?(new_article_path) || current_page?(edit_user_registration_path) %>
+      <% if params[:controller] == 'articles' && (params[:action] == 'show' || params[:action] == 'edit') %>
         <%= link_to :back do %>
           <%= image_tag 'arrow-left.svg', width: "32", height: "32", alt: "Back", class: "fill", title: "Back" %>
+          <% end %>
         <% end %>
-      <% end %>
+
+      <%# if current_user.id == @article.id && params[:controller] == 'articles' && params[:action] == 'show' %>
+        <%#= link_to edit_article_path(@article) do %>
+          <%#= image_tag 'pencil-square.svg', width: "32", height: "32", alt: "Back", class: "fill", title: "Back" %>
+        <%# end %>
+      <%# end %>
+
     </div>
   </li>
   </ul>

@@ -1,5 +1,5 @@
-<div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-bg-dark fixed-top">
-<ul class="nav nav-pills flex-column mb-auto">
+<div class="sidebar p-3 text-bg-dark fixed-top">
+<ul class="nav flex-column mb-auto">
   <li>
     <div class="mid">
         <%= link_to root_path do %>
@@ -15,18 +15,21 @@
         <% end %>
       <% end %>
 
-      <% if params[:controller] == 'articles' && (params[:action] == 'show' || params[:action] == 'edit') %>
-        <%= link_to :back do %>
+      <% if params[:controller] == 'articles' && (params[:action] == 'show' || params[:action] == 'edit' || params[:action] == 'new') %>
+        <%= link_to "javascript:history.go(-1);" do %>
           <%= image_tag 'arrow-left.svg', width: "32", height: "32", alt: "Back", class: "fill", title: "Back" %>
           <% end %>
         <% end %>
 
-      <%# if current_user.id == @article.id && params[:controller] == 'articles' && params[:action] == 'show' %>
+         <%# if current_page?(articles_path) %>
+
+                  <%# if current_user.id == @article.user_id && params[:controller] == 'articles' && params[:action] == 'show' %>
         <%#= link_to edit_article_path(@article) do %>
           <%#= image_tag 'pencil-square.svg', width: "32", height: "32", alt: "Back", class: "fill", title: "Back" %>
         <%# end %>
-      <%# end %>
 
+          <%# end %>
+      <%# end %>
     </div>
   </li>
   </ul>

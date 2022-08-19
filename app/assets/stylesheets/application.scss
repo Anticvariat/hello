@@ -5,6 +5,7 @@
   --color: #ffffff;
   --navbar-color: #7fc7ff;
   --article-back: #7fc7ff;
+  --articles-back: #b8dffc;
   --black: #000000;
   --grey: grey;
 }
@@ -21,19 +22,12 @@
     src: url('Athiti-ExtraLight.ttf') format('truetype');
 }
 
-@font-face {
-    font-family: 'FsSongarak1Regular';
-    src: url('FsSongarak1Regular.ttf') format('truetype');
-}
-
-
 .sidebar {
   background-color: var(--sidebar-color);
   margin-top: 80px;
   overflow-x: hidden;
   height: 100%;
   width: 80px;
-  z-index: 0;
 }
 
 .navb {
@@ -62,24 +56,68 @@
 }
 
 .main-content {
+  position:absolute;
+  width: 100%;
+  min-height: 100%;
   padding-top: 100px;
-  padding-left: 100px;
+  padding-left: 80px;
+
+  background: linear-gradient(to left, var(--articles-back) 1%, #ffffff);
 }
 
-.blog-post {
-  margin-left: 300px;
-  margin-right: 300px;
-  padding: 30px;
-  color: var(--black);
-  background: linear-gradient(40deg, var(--navbar-color) 35%, #ddddff);
-  border-radius: 25px ;
+.articles-background {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-top: -20px;
+  border: 0px;
+  padding-bottom: 10px;
+  background: linear-gradient(to left, var(--articles-back) 1%, #ffffff);
+}
 
+.blog-posts-list {
+  margin: auto;
+  padding: 30px;
+  background: linear-gradient(40deg, var(--navbar-color) 35%, #ddddff);
+  border-radius: 25px;
+  width: 60%;
 }
 
 .blog-post-title {
   background-color: white;
   border-radius: 10px;
   padding: 5px;
+  a {
+  font-size: 36px;
+  color: var(--black);
+  font-family: Athiti-ExtraLight, Tahoma, serif;
+  text-decoration: none;
+  word-wrap: break-word;
+  }
+}
+
+.article-title {
+  text-align: center;
+  font-size: 3em;
+  padding: 0.5em;
+  font-family: Athiti-ExtraLight, Tahoma, serif;
+  word-wrap: break-word;
+  width: 30%;
+  margin: auto;
+  a {
+  text-decoration: none;
+  color: var(--black);
+  }
+}
+
+.blog-post {
+  margin: auto;
+  padding: 30px;
+  color: var(--black);
+  background: linear-gradient(40deg, var(--navbar-color) 35%, #ddddff);
+  border-radius: 25px;
+  width: 60%;
+  word-wrap: break-word;
 }
 
 .blog-post-meta {
@@ -90,14 +128,7 @@
   font-size: 14px;
 }
 
-.article a {
-  font-size: 36px;
-  color: var(--black);
-  font-family: Athiti-ExtraLight, Tahoma, serif;
-  text-decoration: none;
-}
-
-.pagi a {
+.pagi p {
   margin-left: 200px;
   font-size: 100px;
   color: var(--black);
@@ -129,10 +160,6 @@
 .form-signup, .form-signin, .form-edit {
   max-width: 330px;
   padding: 15px;
-}
-
-.form-signup .form-floating:focus-within {
-  z-index: 2;
 }
 
 .form-signup, .form-signin, input[type="email"] {

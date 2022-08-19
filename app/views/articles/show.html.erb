@@ -1,19 +1,21 @@
-<div class="homepage">
+<div class="articles-background">
 <% if !@article.draft? %>
-<h1><%= @article.title %></h1>
-<p><%= @article.body %></p>
-<% if current_user.id == @article.user_id %>
-    <%= link_to "Редактировать", edit_article_path(@article) %><br>
-    <%= link_to "К моим статьям", articles_path %><br>
-<% end %>
-<% else %>
-<% if current_user.id == @article.user_id %>
-<h1><%= @article.title %></h1>
-<p><%= @article.body %></p>
-<%= link_to "Редактировать", edit_article_path(@article) %>  
-<% else %>
-Содержимое недоступно
-<% end %>
+<hr><h1 class="article-title"><%= @article.title %></h1><hr>
+    <div class="blog-post">
+        <div><%= @article.body %></div>
+            <% if current_user.id == @article.user_id %>
+                <%= link_to "Редактировать", edit_article_path(@article) %><br>
+                <%= link_to "К моим статьям", articles_path %><br>
+            <% end %>
+            <% else %>
+                <% if current_user.id == @article.user_id %>
+                    <h1><%= @article.title %></h1>
+                    <p><%= @article.body %></p>
+                    <%= link_to "Редактировать", edit_article_path(@article) %>  
+                <% else %>
+                    Содержимое недоступно
+                <% end %>
 
-<% end %>
-</div>
+            <% end %>
+        </div>
+    </div>

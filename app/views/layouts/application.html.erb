@@ -19,8 +19,12 @@
 
     <div class="main-content">
       <%= yield %>
-      <p><%= notice %></p>
-      <p><%= alert %></p>
+      <% if notice %>
+      <div class="notice text-center fixed-bottom"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+      <div class="notice text-center fixed-bottom"><%= alert %></div>
+      <% end %>
     </div>
   </body>
 </html>

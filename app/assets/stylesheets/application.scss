@@ -2,12 +2,11 @@
 
 :root {
   --sidebar-color: #111;
-  --color: #ffffff;
+  --white: #ffffff;
   --navbar-color: #7fc7ff;
   --article-back: #7fc7ff;
   --articles-back: #b8dffc;
   --black: #000000;
-  --grey: grey;
 }
 
 @font-face {
@@ -18,8 +17,8 @@
 }
 
 @font-face {
-    font-family: 'Athiti-ExtraLight';
-    src: url('Athiti-ExtraLight.ttf') format('truetype');
+    font-family: 'Onest';
+    src: url('Onest.ttf') format('truetype');
 }
 
 .sidebar {
@@ -36,7 +35,7 @@
 
 .dropdown-toggle {
   font-size: 20px;
-  font-family: Athiti-ExtraLight, Tahoma, serif;
+  font-family: Onest, Tahoma, serif;
 }
 
 .navbar-image {
@@ -45,7 +44,7 @@
 }
 
 .logo {
-  color: var(--color);
+  color: var(--white);
   font-family: AlexBrush-Regular, Tahoma, serif;
   font-size: 3em;
   text-shadow: 1.5px 0 1.5px #000, 
@@ -90,7 +89,7 @@
   a {
   font-size: 36px;
   color: var(--black);
-  font-family: Athiti-ExtraLight, Tahoma, serif;
+  font-family: Onest, Tahoma, serif;
   text-decoration: none;
   word-wrap: break-word;
   }
@@ -100,7 +99,7 @@
   text-align: center;
   font-size: 3em;
   padding: 0.5em;
-  font-family: Athiti-ExtraLight, Tahoma, serif;
+  font-family: Onest, Tahoma, serif;
   word-wrap: break-word;
   width: 30%;
   margin: auto;
@@ -128,12 +127,15 @@
   font-size: 14px;
 }
 
-.pagi p {
-  margin-left: 200px;
-  font-size: 100px;
-  color: var(--black);
+.pagination a, span {
+  margin-left: 10px;
+  color: black;
+  padding: 5px;
   text-decoration: none;
-  text-align: center;
+}
+
+.pagination a:hover {
+  background-color: var(--white);
 }
 
 .mid {
@@ -145,10 +147,6 @@
     margin-bottom: 2em;
 }
 
-.homepage {
-  text-align: center;
-}
-
 .articles {
     display: flex;
     align-items: center;
@@ -157,7 +155,7 @@
     overflow: auto;
 }
 
-.form-signup, .form-signin, .form-edit {
+.form-signup, .form-signin, .form-edit, .form-contact, .form-edit-article {
   max-width: 330px;
   padding: 15px;
 }
@@ -209,21 +207,79 @@
   border-top-right-radius: 0;
 }
 
-.form-edit input[type="password"] {
+.form-edit input[type="password"][id="floatingPassword"]{
   margin-bottom: -1px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.form-edit input[type="password_confirmation"] {
+.form-edit input[type="password"][id="floatingPasswordConfirm"] {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-.form-edit input[type="current_password"] {
+.form-edit input[type="password"][id="floatingPasswordChange"] {
   margin-bottom: 10px;
 }
 
-.errors {
-  font-size: 1em;
+.form-contact input[type="first_name"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-contact input[type="email"] {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-contact textarea {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-bottom: 10px;
+  height: 116x;
+  resize: none;
+}
+
+.form-info {
+  max-width: 500px;
+  span {
+  font-size: 2em;
+  font-family: Onest, Tahoma, serif;
+  }
+}
+
+.form-edit-article input[type="title"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-edit-article textarea {
+  margin-bottom: 10px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  height: 116x;
+  resize: none;
+}
+
+.form-floating select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.notice {
+  positiom: absolute;
+  left: 50%;
+  margin-left: -135px;
+  font-family: Onest, Tahoma, serif;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  padding: 15px;
+  border-radius: 15px;
+  width: 350px;
 }

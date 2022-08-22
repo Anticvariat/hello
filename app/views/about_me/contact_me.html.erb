@@ -1,16 +1,29 @@
-<%= form_with url: about_me_index_path do |form| %>
-<h1>Contact Me</h1>
+<%= form_with url: about_me_index_path do |f| %>
+<body>
+<h1 class="mid">Написать мне</h1> 
+<main class="form-contact w-100 m-auto text-center">
+  <form>
 
-<h2>
-	<div><%= form.label "Name"%><br>
-		 <%= form.text_field :first_name, value: (current_user.first_name if user_signed_in?), required: true %><br>
-	</div>
-	<div><%= form.label "Email" %><br>
-		 <%= form.text_field :email, value: (current_user.email if user_signed_in?), required: true %><br>
-	</div>
-	<div><%= form.label "Message" %><br>
-		 <%= form.text_area :message_body,  required: true %>
-	</div>
-	<%= form.submit "Отправить сообщение"%>
-</h2>
-<% end %> 
+    <div class="form-floating">
+      <%= f.text_field :first_name, type: "first_name", class: "form-control", id: "floatingInput", value: (current_user.first_name if user_signed_in?), required: true %>
+      <label for="floatingPassword">Имя</label>
+    </div>
+
+    <div class="form-floating">
+      <%= f.email_field :email, autocomplete: "email", type: "email", class: "form-control", id: "floatingInput", value: (current_user.email if user_signed_in?), required: true %>
+      <label for="floatingInput">Email</label>
+    </div>
+
+  	<div class="form-group">
+
+      <textarea class="form-control" id="floatingInput" rows="3" required: true placeholder="Ваше сообщение"></textarea>
+  	</div>
+
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Отправить</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+  </form>
+
+</main>
+</body>
+  <% end %>

@@ -5,7 +5,7 @@
       <% if user_signed_in? %>
         <li class="nav-item dropdown dropend">
         <a class="text-black text-decoration-none dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <%= image_tag 'person-circle.svg', width: "32", height: "32", alt: "Application Developer", title: "Application Developer", class: "navbar-image" %><%= current_user.first_name %> <%= current_user.last_name %>
+        <%= image_tag 'person-circle.svg', width: "32", height: "32", alt: "Profile", title: "Profile", class: "navbar-image" %><%= current_user.first_name %> <%= current_user.last_name %>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
         <li class="nav-item">

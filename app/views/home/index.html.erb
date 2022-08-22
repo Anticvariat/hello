@@ -1,5 +1,5 @@
-<div class="homepage">
-    <h1>Домашняя страница</h1>
+<div class="mid">
+<h1>Домашняя страница</h1>
     <% if user_signed_in? %>
         <span>Здравствуйте, <%= current_user.first_name%> <%= current_user.last_name%>.</span><br>
         <span>Ваша почта: <%= current_user.email%></span>

@@ -2,11 +2,13 @@
 <article class="blog-posts-list">
   <% @articles.each do |article| %>
     <% unless article.draft? %>
+      <% if current_user.id == article.user_id %>
         <h2 class="blog-post-title">
           <%= link_to article.title, edit_article_path(article) %>  <p class="blog-post-meta "><%= article.user.first_name %> <%= article.user.last_name%><br><%= article.created_at.strftime("%d.%m.%Y в %H:%M")%></p>
            
         </h2>
         <hr>
+        <% end %>
     <% end %>
   <% end %>
 </article>

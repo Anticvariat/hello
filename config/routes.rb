@@ -11,9 +11,11 @@ Rails.application.routes.draw do
   resources :all_articles
   resources :about_me
 
-  devise_for :users
+  #devise_for :users
+  devise_for :users, :controllers => {:registrations => 'users/registrations'}
 
   devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+    get '/users/sign_out' => 'users/sessions#destroy'
+    get '/users', to: 'devise/registrations#new'
   end
 end

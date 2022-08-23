@@ -1,135 +1,144 @@
-@import "bootstrap";
-
 :root {
-  --sidebar-color: #111;
-  --white: #ffffff;
-  --navbar-color: #7fc7ff;
   --article-back: #7fc7ff;
   --articles-back: #b8dffc;
   --black: #000000;
+  --gradient: #ddddff;
+  --navbar-color: #7fc7ff;
+  --sidebar-color: #111;
+  --white: #ffffff;
 }
 
 @font-face {
-    font-family: 'AlexBrush-Regular';
-    src: url('AlexBrush-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'AlexBrush-Regular';
+  src: url('AlexBrush-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Onest';
-    src: url('Onest.ttf') format('truetype');
+  font-family: 'Onest';
+  src: url('Onest.ttf') format('truetype');
 }
 
 .sidebar {
   background-color: var(--sidebar-color);
+  height: 100%;
   margin-top: 80px;
   overflow-x: hidden;
-  height: 100%;
   width: 80px;
 }
 
 .navb {
   background-color: var(--navbar-color);
+  height: 80px;
 }
 
 .dropdown-toggle {
-  font-size: 20px;
+  color: var(--black);
   font-family: Onest, Tahoma, serif;
+  font-size: calc(.5em + 1vw);
 }
 
 .navbar-image {
   margin-left: 1.2em;
-  margin-right: 0.5em;
+  margin-right: .5em;
 }
 
 .logo {
   color: var(--white);
   font-family: AlexBrush-Regular, Tahoma, serif;
-  font-size: 3em;
-  text-shadow: 1.5px 0 1.5px #000, 
-  0 1.5px 1.5px #000, 
-  -1.5px 0 1.5px #000, 
-  0 -1.5px 1.5px #000;
+  font-size: calc(1em + 2vw);
   text-decoration: none;
+  text-shadow: 1.5px 0 1.5px var(--black), 0 1.5px 1.5px var(--black), -1.5px 0 1.5px var(--black), 0 -1.5px 1.5px var(--black);
 }
 
 .main-content {
-  position:absolute;
-  width: 100%;
+  background: linear-gradient(to left, var(--articles-back) 1%, var(--white));
   min-height: 100%;
-  padding-top: 100px;
   padding-left: 80px;
-
-  background: linear-gradient(to left, var(--articles-back) 1%, #ffffff);
+  padding-top: 100px;
+  position: absolute;
+  width: 100%;
 }
 
 .articles-background {
-  position: relative;
+  background: linear-gradient(to left, var(--articles-back) 1%, var(--white));
+  border: 0;
   height: 100%;
-  width: 100%;
   margin-top: -20px;
-  border: 0px;
   padding-bottom: 10px;
-  background: linear-gradient(to left, var(--articles-back) 1%, #ffffff);
+  position: relative;
+  width: 100%;
 }
 
 .blog-posts-list {
-  margin: auto;
-  padding: 30px;
-  background: linear-gradient(40deg, var(--navbar-color) 35%, #ddddff);
+  background: linear-gradient(40deg, var(--navbar-color) 35%, var(--gradient));
   border-radius: 25px;
+  margin: auto;
+  min-width: 300px;
+  padding: 30px;
   width: 60%;
 }
 
 .blog-post-title {
-  background-color: white;
+  background-color: var(--white);
   border-radius: 10px;
   padding: 5px;
+
   a {
-  font-size: 36px;
-  color: var(--black);
-  font-family: Onest, Tahoma, serif;
-  text-decoration: none;
-  word-wrap: break-word;
+    color: var(--black);
+    font-family: Onest, Tahoma, serif;
+    font-size: calc(.25em + 2vw);
+    text-decoration: none;
+    word-wrap: break-word;
   }
 }
 
 .article-title {
-  text-align: center;
-  font-size: 3em;
-  padding: 0.5em;
   font-family: Onest, Tahoma, serif;
-  word-wrap: break-word;
-  width: 30%;
+  font-size: calc(1em + 3vw);
   margin: auto;
+  min-width: 300px;
+  padding: .5em;
+  text-align: center;
+  width: 30%;
+  word-wrap: break-word;
+
   a {
-  text-decoration: none;
-  color: var(--black);
+    color: var(--black);
+    text-decoration: none;
   }
 }
 
 .blog-post {
-  margin: auto;
-  padding: 30px;
-  color: var(--black);
-  background: linear-gradient(40deg, var(--navbar-color) 35%, #ddddff);
+  background: linear-gradient(40deg, var(--navbar-color) 35%, var(--gradient));
   border-radius: 25px;
+  color: var(--black);
+  margin: auto;
+  min-width: 300px;
+  padding: 30px;
   width: 60%;
   word-wrap: break-word;
 }
 
 .blog-post-meta {
-  text-align: right;
+  color: var(--grey);
   display: block;
   float: right;
-  color: var(--grey);
-  font-size: 14px;
+  font-size: calc(.25em + .5vw);
+  text-align: right;
 }
 
-.pagination a, span {
+.article-body {
+  font-family: Onest, Tahoma, serif;
+  font-size: calc(.35em + .5vw);
+}
+
+.pagination a,
+span {
+  color: var(--black);
+  font-size: calc(.5em + .75vw);
   margin-left: 10px;
-  color: black;
   padding: 5px;
   text-decoration: none;
 }
@@ -144,62 +153,67 @@
 
 .fill {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(65deg) brightness(105%) contrast(103%);
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 .articles {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    overflow: auto;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
 }
 
-.form-signup, .form-signin, .form-edit, .form-contact, .form-edit-article {
+.form-signup,
+.form-signin,
+.form-edit,
+.form-contact,
+.form-edit-article {
   max-width: 330px;
   padding: 15px;
 }
 
-.form-signup, .form-signin, input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
+.form-signup,
+.form-signin input[type="email"] {
   border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: -1px;
 }
 
 .form-signup input[type="password"] {
-  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  margin-bottom: -1px;
 }
 
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  margin-bottom: 10px;
 }
 
 .form-signup input[type="first_name"] {
-  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  margin-bottom: -1px;
 }
 
 .form-signup input[type="last_name"] {
-  margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  margin-bottom: 10px;
 }
 
 .form-edit input[type="first_name"] {
-  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  margin-bottom: -1px;
 }
 
 .form-edit input[type="last_name"] {
@@ -207,10 +221,10 @@
   border-top-right-radius: 0;
 }
 
-.form-edit input[type="password"][id="floatingPassword"]{
-  margin-bottom: -1px;
+.form-edit input[type="password"][id="floatingPassword"] {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  margin-bottom: -1px;
 }
 
 .form-edit input[type="password"][id="floatingPasswordConfirm"] {
@@ -223,63 +237,64 @@
 }
 
 .form-contact input[type="first_name"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: -1px;
 }
 
 .form-contact input[type="email"] {
-  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  margin-bottom: -1px;
 }
 
 .form-contact textarea {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  height: 116px;
   margin-bottom: 10px;
-  height: 116x;
   resize: none;
 }
 
 .form-info {
   max-width: 500px;
+
   span {
-  font-size: 2em;
-  font-family: Onest, Tahoma, serif;
+    font-family: Onest, Tahoma, serif;
+    font-size: 2em;
   }
 }
 
 .form-edit-article input[type="title"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: -1px;
 }
 
 .form-edit-article textarea {
-  margin-bottom: 10px;
-  border-top-right-radius: 0;
   border-top-left-radius: 0;
-  height: 116x;
+  border-top-right-radius: 0;
+  height: 116px;
+  margin-bottom: 10px;
   resize: none;
 }
 
 .form-floating select {
-  width: 100%;
-  padding: 10px;
   margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
 }
 
 .notice {
-  positiom: absolute;
-  left: 50%;
-  margin-left: -135px;
-  font-family: Onest, Tahoma, serif;
-  margin-bottom: 10px;
-  font-size: 1.5em;
-  padding: 15px;
   border-radius: 15px;
+  font-family: Onest, Tahoma, serif;
+  font-size: 1.5em;
+  left: 50%;
+  margin-bottom: 10px;
+  margin-left: -135px;
+  padding: 15px;
+  position: absolute;
   width: 350px;
 }

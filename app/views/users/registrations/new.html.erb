@@ -5,23 +5,23 @@
   <form>
     <h1 class="h3 mb-3 fw-normal">Регистрация</h1>
     <div class="form-floating">
-      <%= f.email_field :email, autocomplete: "email", type: "email", class: "form-control", id: "floatingInput", placeholder: "name@example.com" %>
+      <%= f.email_field :email, autocomplete: "email", type: "email", class: "form-control", id: "email", placeholder: "name@example.com", required: "true" %>
       <label for="floatingInput">Email</label>
     </div>
     <div class="form-floating">
-      <%= f.password_field :password, type: "password", class: "form-control", id: "floatingInput", placeholder: "Password" %>
+      <%= f.password_field :password, type: "password", class: "form-control", id: "password", placeholder: "Password", required: "true" %>
       <label for="floatingPassword">Пароль</label>
     </div>
     <div class="form-floating">
-      <%= f.password_field :password_confirmation, type: "password", class: "form-control", id: "floatingPassword", placeholder: "Password" %>
+      <%= f.password_field :password_confirmation, type: "password", class: "form-control", id: "floatingPassword", placeholder: "Password", required: "true" %>
       <label for="floatingPassword">Подтверждение пароля</label>
     </div>
     <div class="form-floating">
-      <%= f.text_field :first_name, type: "first_name", class: "form-control", id: "floatingInput", placeholder: "Ivan" %>
+      <%= f.text_field :first_name, type: "first_name", class: "form-control", id: "floatingInput", placeholder: "Ivan", required: "true" %>
       <label for="floatingPassword">Имя</label>
     </div>
     <div class="form-floating">
-      <%= f.text_field :last_name, type: "last_name", class: "form-control", id: "floatingInput", placeholder: "Ivanov" %>
+      <%= f.text_field :last_name, type: "last_name", class: "form-control", id: "floatingInput", placeholder: "Ivanov", required: "true" %>
       <label for="floatingPassword">Фамилия</label>
     </div>
 

@@ -1,3 +1,4 @@
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <body>
     
@@ -13,7 +14,7 @@
       <label for="floatingPassword">Пароль</label>
     </div>
     <div class="form-floating">
-      <%= f.password_field :password_confirmation, type: "password", class: "form-control all-0", id: "floatingPassword", placeholder: "Password", required: "true" %>
+      <%= f.password_field :password_confirmation, type: "password", class: "form-control all-0", id: "password_confirm", placeholder: "Password", required: "true" %>
       <label for="floatingPassword">Подтверждение пароля</label>
     </div>
     <div class="form-floating">
@@ -25,7 +26,7 @@
       <label for="floatingPassword">Фамилия</label>
     </div>
 
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Зарегестрироваться</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit" id="signup-button">Зарегистрироваться </button>
     <%= render "users/shared/links" %>
     <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
   </form>
@@ -34,3 +35,6 @@
 </body>
     <%= render "users/shared/error_messages", resource: resource %>
   <% end %>
+
+<%= javascript_pack_tag 'reg_validations'%>
+

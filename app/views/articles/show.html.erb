@@ -11,6 +11,15 @@
             <% end %>
 </div>
 <% else %>
+  <% if user_signed_in? && current_user.id == @article.user_id %>
+    <hr><h1 class="article-title"><%= @article.title %></h1><hr>
+    <div class="blog-post">
+        <div><%= @article.body %></div><hr>
+        <%= link_to "Редактировать", edit_article_path(@article) %><br>
+        <%= link_to "К моим статьям", articles_path %><br>
+        <% else %>
+
   <div class="notice text-center fixed-bottom">Access denied</div>
     <h1 class="mid">Содержимое недоступно</h1>
+    <% end %>
 <% end %>

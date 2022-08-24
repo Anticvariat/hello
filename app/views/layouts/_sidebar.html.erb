@@ -16,8 +16,8 @@
       <% end %>
 
       <% if params[:controller] == 'articles' && (params[:action] == 'show' || params[:action] == 'edit' || params[:action] == 'new') %>
-        <%= link_to "javascript:history.go(-1);" do %>
-          <%= image_tag 'arrow-left.svg', width: "32", height: "32", alt: "Back", class: "fill", title: "Back" %>
+        <%= link_to :back do %>
+          <%= image_tag 'arrow-left.svg', width: "32", height: "32", alt: "Back", class: "fill", title: "Back to articles" %>
           <% end %>
         <% end %>
 

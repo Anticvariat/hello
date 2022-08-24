@@ -4,7 +4,7 @@
         <p>Здравствуйте, <%= current_user.first_name%> <%= current_user.last_name%>.</p>
         <p>Ваша почта: <%= current_user.email%></p>
     <% else %>
-        <span>Привет Гость!</span><br>
+        <p>Привет Гость!</p>
     <% end %>
 </div>
 <article class="blog-posts-list">

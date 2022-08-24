@@ -1,25 +1,30 @@
-<h2>Change your password</h2>
-
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
+<body>
+    
+<main class="form-signin w-100 m-auto text-center">
+  <form>
+    <h1 class="h3 mb-3 fw-normal">Восстановление пароля</h1>
+    <div class="field form-floating">
+      <%= f.password_field :password, type: "password", class: "form-control bottom-0", id: "user_password", placeholder: "Password", required: true %>
+      <label for="user_password">Пароль (минимум <%= @minimum_password_length %> символов)</label>
+    </div>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+    <div class="field form-floating">
+      <%= f.password_field :password_confirmation, type: "password", class: "form-control top-0-last", id: "user_password", placeholder: "Password", required: true %>
+      <label for="user_password">Подтверждение пароля</label>
+    </div>
+
+<div class="actions">
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Отправить сообщение</button>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <%= render "users/shared/links" %>
+    <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+  </form>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+</main>
+</body>
 
-<%= render "users/shared/links" %>
+  <% end %>

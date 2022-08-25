@@ -5,25 +5,26 @@
 <main class="form-signup w-100 m-auto text-center">
   <form>
     <h1 class="h3 mb-3 fw-normal">Регистрация</h1>
-    <div class="form-floating">
-      <%= f.email_field :email, autocomplete: "email", type: "email", class: "form-control bottom-0", id: "email", placeholder: "name@example.com" %>
-      <label for="floatingInput">Email</label>
+    <div class="form-group">
+      <label class="label">Email</label>
+      <%= f.email_field :email, autocomplete: "email", type: "email", class: "form-control", id: "email", placeholder: "example@example.com" %>
+
     </div>
-    <div class="form-floating">
-      <%= f.password_field :password, type: "password", class: "form-control all-0", id: "password", placeholder: "Password" %>
-      <label for="floatingPassword">Пароль</label>
+    <div class="form-group">
+      <label class="label">Пароль</label>
+      <%= f.password_field :password, type: "password", class: "form-control", id: "password", placeholder: "password" %>
     </div>
-    <div class="form-floating">
-      <%= f.password_field :password_confirmation, type: "password", class: "form-control all-0", id: "password_confirm", placeholder: "Password" %>
-      <label for="floatingPassword">Подтверждение пароля</label>
+    <div class="form-group">
+      <label class="label">Подтверждение пароля</label>
+      <%= f.password_field :password_confirmation, type: "password", class: "form-control", id: "password_confirm", placeholder: "password" %>
     </div>
-    <div class="form-floating">
-      <%= f.text_field :first_name, type: "first_name", class: "form-control all-0", id: "first_name", placeholder: "Ivan" %>
-      <label for="floatingPassword">Имя</label>
+    <div class="form-group">
+      <label class="label">Имя</label>
+      <%= f.text_field :first_name, type: "first_name", class: "form-control", id: "first_name", placeholder: "Ivan" %>
     </div>
-    <div class="form-floating">
-      <%= f.text_field :last_name, type: "last_name", class: "form-control top-0-last", id: "last_name", placeholder: "Ivanov" %>
-      <label for="floatingPassword">Фамилия</label>
+    <div class="form-group">
+      <label class="label">Фамилия</label>
+      <%= f.text_field :last_name, type: "last_name", class: "form-control", id: "last_name", placeholder: "Ivanov" %>
     </div>
 
     <button class="w-100 btn btn-lg btn-primary" type="submit" id="signup-button">Зарегистрироваться </button>
@@ -38,5 +39,5 @@
 
 <%= javascript_pack_tag 'reg_validations'%>
 
-<div class="notice text-center fixed-bottom" id="error_message"></div>
+<div class="notice text-center fixed-bottom" id="error_explanation"></div>
 

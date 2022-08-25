@@ -5,9 +5,9 @@
 <main class="form-signin w-100 m-auto text-center">
   <form>
     <h1 class="h3 mb-3 fw-normal">Забыли пароль?</h1>
-    <div class="field form-floating">
-      <%= f.email_field :email, autocomplete: "email", type: "email", class: "form-control", style: "margin-bottom: 10px;", id: "user_email", placeholder: "name@example.com", required: true %>
-      <label for="user_email">Email</label>
+    <div class="field form-group">
+      <label class="label">Email</label>
+      <%= f.email_field :email, autocomplete: "email", type: "email", class: "form-control", id: "user_email", placeholder: "example@example.com", required: true %>
     </div>
 
 <div class="actions">

@@ -6,14 +6,14 @@
 <main class="form-signin w-100 m-auto text-center">
   <form>
     <h1 class="h3 mb-3 fw-normal">Восстановление пароля</h1>
-    <div class="field form-floating">
-      <%= f.password_field :password, type: "password", class: "form-control bottom-0", id: "user_password", placeholder: "Password", required: true %>
-      <label for="user_password">Пароль (минимум <%= @minimum_password_length %> символов)</label>
+    <div class="field form-group">
+      <label class="label">Пароль (минимум <%= @minimum_password_length %> символов)</label>
+      <%= f.password_field :password, type: "password", class: "form-control bottom-0", id: "user_password", placeholder: "password", required: true %>
     </div>
 
-    <div class="field form-floating">
-      <%= f.password_field :password_confirmation, type: "password", class: "form-control top-0-last", id: "user_password", placeholder: "Password", required: true %>
-      <label for="user_password">Подтверждение пароля</label>
+    <div class="field form-group">
+      <label class="label">Подтверждение пароля</label>
+      <%= f.password_field :password_confirmation, type: "password", class: "form-control top-0-last", id: "user_password", placeholder: "password", required: true %>
     </div>
 
 <div class="actions">

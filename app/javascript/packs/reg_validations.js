@@ -7,13 +7,13 @@ function isValid() {
 
   if (email=="" || pas=="" || pasconf=="" || first_name=="" || last_name=="")
     {
-      document.getElementById("error_message").innerHTML = "Заполните все поля!";
+      document.getElementById("error_explanation").innerHTML = "Заполните все поля!";
       return false;
     }
 
   if (pas != pasconf) {
     //alert( "Пароли не совпадают!" );
-    document.getElementById("error_message").innerHTML = "Пароли не совпадают!";
+    document.getElementById("error_explanation").innerHTML = "Пароли не совпадают!";
     return false;
   }
   else 
@@ -22,7 +22,7 @@ function isValid() {
         return true;
       else
       {
-        document.getElementById("error_message").innerHTML = "Минимальная длина пароля 6 символов!";
+        document.getElementById("error_explanation").innerHTML = "Минимальная длина пароля 6 символов!";
         //alert( "Минимальная длина пароля 6 символов!" );
         return false; 
       }

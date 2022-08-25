@@ -3,36 +3,37 @@
 <body>    
 <main class="form-edit w-100 m-auto text-center">
   <form>
-    <div class="form-floating">
-      <%= f.email_field :email, autocomplete: "email", type: "email", class: "form-control bottom-0", id: "floatingInput", placeholder: "name@example.com" %>
-      <label for="floatingInput">Email</label>
+    <div class="form-group">
+      <label class="label">Email</label>
+      <%= f.email_field :email, autocomplete: "email", type: "email", class: "form-control", placeholder: "examle@example.com" %>
+
     </div>
-    <div class="form-floating">
-      <%= f.text_field :first_name, type: "first_name", class: "form-control all-0", id: "floatingInput", placeholder: "Ivan" %>
-      <label for="floatingPassword">Имя</label>
+    <div class="form-group">
+      <label class="label">Имя</label>
+      <%= f.text_field :first_name, type: "first_name", class: "form-control", placeholder: "Ivan" %>
     </div>
-    <div class="form-floating">
-      <%= f.text_field :last_name, type: "last_name", class: "form-control top-0-last", id: "floatingInput", placeholder: "Ivanov" %>
-      <label for="floatingPassword">Фамилия</label>
+    <div class="form-group">
+      <label class="label">Фамилия</label>
+      <%= f.text_field :last_name, type: "last_name", class: "form-control", placeholder: "Ivanov" %>
     </div>
 <!--         <% if @minimum_password_length %>
           <br>
           <em><%= @minimum_password_length %> characters minimum<br></em>
         <% end %> -->
-    <span style="font-size: 12px;">Необязательные поля</span>
-    <div class="form-floating">
-      <%= f.password_field :password, type: "password", class: "form-control bottom-0", id: "floatingPassword", placeholder: "Password" %>
-      <label for="floatingPassword">Новый пароль</label>
-    </div>
-    <div class="form-floating password-confirmation">
-      <%= f.password_field :password_confirmation, type: "password", class: "form-control top-0-last", id: "floatingPasswordConfirm", placeholder: "Password" %>
-      <label for="floatingPasswordConfirm">Подтверждение пароля</label>
 
+    <div class="form-group">
+      <label class="label">Новый пароль</label><br>
+      <%= f.password_field :password, type: "password", class: "form-control", placeholder: "password" %>
     </div>
-    <span style="font-size: 12px;">Необходим для применения изменений</span>
-    <div class="form-floating current_password">
-      <%= f.password_field :current_password, type: "password", class: "form-control", style: "margin-bottom: 10px;", id: "floatingPasswordChange", placeholder: "Password" %>
-      <label for="floatingPassword">Текущий пароль</label>
+    <div class="form-group password-confirmation">
+      <label class="label">Подтверждение пароля</label>
+      <%= f.password_field :password_confirmation, type: "password", class: "form-control", placeholder: "password" %>
+    </div>
+
+    <div class="form-group current_password">
+            <label class="label">Текущий пароль</label>
+      <%= f.password_field :current_password, type: "password", class: "form-control", placeholder: "password" %>
+        <span style="font-size: 12px;">Необходим для применения изменений</span>
     </div>
 
 

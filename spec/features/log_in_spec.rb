@@ -9,8 +9,8 @@ RSpec.describe 'Log in', js: true do
     scenario 'Sign in with correct params' do
       visit new_user_session_path
 
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
+      fill_in 'user_email', with: user.email
+      fill_in 'user_password', with: user.password
 
       # fill_in 'user_email', with: user.email
       # fill_in 'user_password', with: '123456'

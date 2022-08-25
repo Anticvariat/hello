@@ -23,7 +23,6 @@ gem 'rubocop-rspec', require: false
 gem 'sass-rails', '>= 6'
 gem 'scss_lint', require: false
 gem 'slim_lint'
-gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.4.3'
 
 group :development, :test do

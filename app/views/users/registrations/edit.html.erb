@@ -1,7 +1,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 <h1 class="mid">Мой профиль</h1>
 <body>    
-<main class="form-edit w-100 m-auto text-center">
+<main class="form-edit w-100 m-auto">
   <form>
     <div class="form-group">
       <label class="label">Email</label>
@@ -31,15 +31,16 @@
     </div>
 
     <div class="form-group current_password">
-            <label class="label">Текущий пароль</label>
+      <label class="label">Текущий пароль</label>
       <%= f.password_field :current_password, type: "password", class: "form-control", placeholder: "password" %>
-        <span style="font-size: 12px;">Необходим для применения изменений</span>
+      <p class="description">Необходим для применения изменений</p>
     </div>
 
-
+    <div class="text-center">
     <button class="w-100 btn btn-lg btn-primary" type="submit">Сохранить</button>
     <%= render "users/shared/error_messages", resource: resource %>
     <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+  </div>
   </form>
 
 </main>

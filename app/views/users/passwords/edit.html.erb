@@ -1,3 +1,4 @@
+<h1 class="mid">Восстановление пароля</h1>
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
@@ -5,7 +6,6 @@
     
 <main class="form-signin w-100 m-auto text-center">
   <form>
-    <h1 class="h3 mb-3 fw-normal">Восстановление пароля</h1>
     <div class="field form-group">
       <label class="label">Пароль (минимум <%= @minimum_password_length %> символов)</label>
       <%= f.password_field :password, type: "password", class: "form-control bottom-0", id: "user_password", placeholder: "password", required: true %>

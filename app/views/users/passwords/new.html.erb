@@ -1,10 +1,10 @@
+<h1 class="mid">Забыли пароль?</h1>
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 <body>
     
-<main class="form-signin w-100 m-auto text-center">
+<main class="form-signin w-100 m-auto">
   <form>
-    <h1 class="h3 mb-3 fw-normal">Забыли пароль?</h1>
     <div class="field form-group">
       <label class="label">Email</label>
       <%= f.email_field :email, autocomplete: "email", type: "email", class: "form-control", id: "user_email", placeholder: "example@example.com", required: true %>
@@ -13,9 +13,10 @@
 <div class="actions">
     <button class="w-100 btn btn-lg btn-primary" type="submit">Отправить сообщение</button>
   </div>
-
+  <div class="text-center">
     <%= render "users/shared/links" %>
     <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+  </div>  
   </form>
 
 </main>

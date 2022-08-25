@@ -116,7 +116,7 @@
   min-width: 300px;
   padding: .5em;
   text-align: center;
-  width: 30%;
+  width: 80%;
   word-wrap: break-word;
 
   a {
@@ -142,6 +142,13 @@
   float: right;
   font-size: calc(.25em + .5vw);
   text-align: right;
+}
+
+.blog-post-status {
+  color: var(--grey);
+  font-size: calc(.5em + .5vw);
+  min-width: 300px;
+  text-align: center;
 }
 
 .article-body {

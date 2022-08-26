@@ -35,12 +35,5 @@ jobs:
       - name: Setub db
         run: bin/rails db:setup
 
-      - name: Install Chrome
-        uses: browser-actions/setup-chrome@latest
-      - name: Show Chrome version
-        run: chrome --version
-      - name: Install ChromeDriver
-        uses: nanasess/setup-chromedriver@master
-
       - name: Run tests
         run: bin/test

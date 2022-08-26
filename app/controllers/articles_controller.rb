@@ -3,7 +3,7 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   def index
-    @articles = Article.where(user_id: current_user, status: "public")
+    @articles = Article.where(user_id: current_user, status: 'public')
   end
 
   def show

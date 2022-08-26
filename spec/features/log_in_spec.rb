@@ -14,7 +14,7 @@ RSpec.describe 'Log in', js: true do
 
       # fill_in 'user_email', with: user.email
       # fill_in 'user_password', with: '123456'
-      click_button 'Sign in'
+      click_button 'Войти'
       expect(page).to have_content 'Signed in successfully.'
     end
   end

@@ -12,7 +12,7 @@ RSpec.describe 'Create Article' do
       fill_in 'article[title]', with: 'test'
       fill_in 'article[body]', with: 'example article'
       click_button 'Сохранить'
-      expect(page).to have_content 'К моим статьям'
+      expect(page).not_to have_content 'Новая статья'
     end
   end
 end

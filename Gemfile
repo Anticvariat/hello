@@ -13,6 +13,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap', '~> 5.2.0'
 gem 'devise'
+gem 'erb_lint', require: false
 gem 'jbuilder', '~> 2.7'
 gem 'kaminari'
 gem 'puma', '~> 4.1'

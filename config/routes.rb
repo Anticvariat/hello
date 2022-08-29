@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'about_me', to: 'about_me#index'
   get 'about_me/contact_me', to: 'about_me#contact_me'
 
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
   resources :drafts
   resources :all_articles
   resources :about_me

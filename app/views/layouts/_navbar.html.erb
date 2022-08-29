@@ -5,34 +5,34 @@
       <% if user_signed_in? %>
         <li class="nav-item text-black dropdown dropend">
         <a class="text-decoration-none dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <%= image_tag 'person-circle.svg', width: "32", height: "32", alt: "Profile", title: "Profile", class: "navbar-image-left" %><%= current_user.first_name %> <%= current_user.last_name %>
+        <%= image_tag 'person-circle.svg', width: '32', height: '32', alt: 'Profile', title: 'Profile', class: 'navbar-image-left' %><%= current_user.first_name %> <%= current_user.last_name %>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
         <li class="nav-item">
-        <%= link_to 'Мои статьи', articles_path, :class => 'dropdown-item'%>
+        <%= link_to 'Мои статьи', articles_path, class: 'dropdown-item' %>
         </li>
         <li class="nav-item">
-        <%= link_to 'Черновики', drafts_path, :class => 'dropdown-item' %>
+        <%= link_to 'Черновики', drafts_path, class: 'dropdown-item' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Редактировать', edit_user_registration_path, :class => 'dropdown-item' %>
+          <%= link_to 'Редактировать', edit_user_registration_path, class: 'dropdown-item' %>
         </li>
         <li class="nav-item"><hr class="dropdown-divider"></li>
         <li class="nav-item">
-        <%= link_to 'Выйти', destroy_user_session_path, :class => 'dropdown-item', :method => :delete %>
+        <%= link_to 'Выйти', destroy_user_session_path, class: 'dropdown-item', method: :delete %>
         </li>
         </ul>
       <% else %>
         <li class="nav-item dropdown dropend">
         <a class="link text-decoration-none dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <%= image_tag 'person-circle.svg', width: "32", height: "32", alt: "Profile", title: "Profile", class: "navbar-image-left"%> Guest
+        <%= image_tag 'person-circle.svg', width: '32', height: '32', alt: 'Profile', title: 'Profile', class: 'navbar-image-left' %> Guest
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
         <li class="nav-item">
-        <%= link_to 'Вход', new_user_session_path, :class => 'dropdown-item'%>
+        <%= link_to 'Вход', new_user_session_path, class: 'dropdown-item' %>
         </li>
         <li class="nav-item">
-        <%= link_to 'Регистрация', new_user_registration_path, :class => 'dropdown-item' %>
+        <%= link_to 'Регистрация', new_user_registration_path, class: 'dropdown-item' %>
         </li>
         </ul>
       <% end %>
@@ -44,14 +44,14 @@
 
         <div class="nav-item dropdown dropstart col-4 d-flex justify-content-end align-items-center">
           <a class="d-flex align-items-center text-decoration-none dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Info<%= image_tag 'info-circle.svg', width: "32", height: "32", alt: "Application Developer", title: "Application Developer", class: "navbar-image-right" %>
+          Info<%= image_tag 'info-circle.svg', width: '32', height: '32', alt: 'Application Developer', title: 'Application Developer', class: 'navbar-image-right' %>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
             <li>
-              <%= link_to "Обо мне", about_me_path, :class => 'dropdown-item'%>
+              <%= link_to 'Обо мне', about_me_path, class: 'dropdown-item' %>
             </li>
             <li>
-              <%= link_to "Связаться со мной", about_me_contact_me_path, :class => 'dropdown-item'%>
+              <%= link_to 'Связаться со мной', about_me_contact_me_path, class: 'dropdown-item' %>
             </li>
           </ul>
         </div>

@@ -2,10 +2,10 @@
 
 <body>
   <main class="form-edit-article w-100 m-auto text-center">
-	<%= form_with model: @article do |form| %>
-  	<div>
+  <%= form_with model: @article do |form| %>
+    <div>
         <div class="form-group">
-      <%= form.text_field :title, type: "title", class: "form-control", placeholder: "Название", required: true %>
+      <%= form.text_field :title, type: 'title', class: 'form-control', placeholder: 'Название', required: true %>
     </div>
     <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
@@ -13,15 +13,13 @@
   <div>
 
     <div class="form-group">
-    	<%= form.text_area :body, type: "body", class: "form-control", rows: "3", placeholder: "Содержание" %>
-  	</div>
+      <%= form.text_area :body, type: 'body', class: 'form-control', rows: '3', placeholder: 'Содержание' %>
+    </div>
   </div>
 
-
 <div class="form-floating">
-  <%= form.select :status, [['Публичный', :public], ['Черновик', :draft]], class: "form-select" %>
+  <%= form.select :status, [['Публичный', :public], ['Черновик', :draft]], class: 'form-select' %>
 </div>
-
 
     <button class="w-100 btn btn-lg btn-primary" type="submit">Сохранить</button>
 <% end %>

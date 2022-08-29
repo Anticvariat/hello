@@ -1,17 +1,7 @@
 <% if current_user.id == @article.user_id %>
   <h1 class="mid">Редактирование статьи</h1>
-  <%= render "form", article: @article %>
+  <%= render 'form', article: @article %>
 <% else %>
 <div class="notice text-center fixed-bottom">Access denied</div>
 <h1 class="mid">Редактирование недоступно</h1>
 <% end %>
-
-<div class="notice text-center fixed-bottom">
-      <% @article.errors.full_messages_for(:title).each do |message| %>
-      <%= message %>
-    <% end %>
-
-      <% @article.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-</div>

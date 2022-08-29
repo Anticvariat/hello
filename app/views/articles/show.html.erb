@@ -13,10 +13,7 @@
 <% else %>
 <hr><h1 class="article-title"><%= @article.title %></h1><hr>
     <div class="blog-post">
-        <div><%= @article.body %></div>
-        <% if user_signed_in? && current_user.id == @article.user_id%>
-          <%= link_to 'К моим статьям', articles_path %><br>
-        <% end %>
+    <div><%= @article.body %></div>
 </div>
 <% end %>
 

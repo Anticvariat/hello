@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   get 'about_me/contact_me', to: 'about_me#contact_me'
 
   resources :articles do
-    resources :comments
+    resources :comments, only: [:create, :destroy]
   end
-  resources :drafts
-  resources :all_articles
-  resources :about_me
+  resources :drafts, only: [:index]
+  resources :all_articles, only: [:index]
+  resources :about_me, only: [:index, :create]
 
   devise_for :users
 

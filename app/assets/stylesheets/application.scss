@@ -141,7 +141,7 @@
 }
 
 .blog-post {
-  background: linear-gradient(40deg, var(--navbar-color) 35%, var(--gradient));
+  background: linear-gradient(10deg, var(--navbar-color) 5%, var(--gradient));
   border-radius: 25px;
   color: var(--black);
   line-height: 2em;
@@ -246,13 +246,18 @@
 .notice {
   border-radius: 15px;
   font-family: Onest, Tahoma, serif;
-  font-size: 1.5em;
+  font-size: calc(0.5em + 1.5vw);
   left: 50%;
   margin-bottom: 10px;
   margin-left: -135px;
   padding: 15px;
   position: absolute;
   width: 350px;
+}
+
+.title {
+  font-family: Onest, Tahoma, serif;
+  font-size: 1.5em;
 }
 
 .padding-5 {

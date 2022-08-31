@@ -2,8 +2,6 @@
 linters:
   Rubocop:
     enabled: true
-    exclude:
-      - "**/views/kaminari/**"
     rubocop_config:
       inherit_from:
         - .rubocop.yml
@@ -22,4 +20,4 @@ linters:
       Lint/UselessAssignment:
         Enabled: true
       Rails/OutputSafety:
-        Enabled: true 
+        Enabled: true

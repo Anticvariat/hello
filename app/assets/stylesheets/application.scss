@@ -68,6 +68,7 @@
 }
 
 .main-content {
+  font-size: calc(0.5em + 1vw);
   background: linear-gradient(to left, var(--articles-back) 1%, var(--white));
   min-height: 100%;
   padding-left: 80px;

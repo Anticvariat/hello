@@ -40,7 +40,9 @@
 <% if @article.comments.count > 0 %>
   <div class="mid">
 <% @article.comments.each do |comment| %>
+    <% if comment.commenter != nil %>
     <%= comment.commenter %>: <%= comment.body %><br>
+    <% end %>
 <% end %>
 <% else %>
 <div class="mid grey-small-text" style="text-align: center; float: center;">пока что ничего нет</div>

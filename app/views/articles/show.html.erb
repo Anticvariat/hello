@@ -13,32 +13,40 @@
     <h1 class="mid">Содержимое недоступно</h1>
   <% end %>
 <% else %>
-  <hr><h1 class="article-title"><%= @article.title %></h1><hr>
+  <h1 class="article-title"><%= @article.title %></h1>
   <div class="blog-post">
   <div><%= simple_format(@article.body) %></div>
   </div>
 <% end %>
+<hr>
 
+<h2 class="mid">Оставить комментарий</h2>
+<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col padding-5">
+      <%= form.text_field :commenter, value: (current_user.first_name if user_signed_in?), class: 'form-control', placeholder: 'Имя', required: true %>
+    </div>
+    <div class="col-8 padding-5">
+      <%= form.text_field :body, class: 'form-control', rows: '3', placeholder: 'Ваш комментарий', required: true %>
+    </div>
+    <div class="col padding-5">
+      <button class="w-100 btn btn-primary" type="submit">Отправить</button>
+    </div>
+  </div>
+</div>
+<hr>
 <h2 class="mid" style="margin: 10px;">Комментарии</h2>
-  <div class="blog-post mid">
+<% if @article.comments.count > 0 %>
+  <div class="mid">
 <% @article.comments.each do |comment| %>
     <%= comment.commenter %>: <%= comment.body %><br>
 <% end %>
+<% else %>
+<div class="mid grey-small-text" style="text-align: center; float: center;">пока что ничего нет</div>
+<% end %>
 </div>
 
-<h2 class="mid">Оставить комментарий:</h2>
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
-<main class="form-contact w-100 m-auto text-center">
-    <div class="form-group">
-      <label class="label">Автор</label>
-      <%= form.text_field :commenter, class: 'form-control', value: (current_user.first_name if user_signed_in?), required: true %>
-    </div>
 
-    <div class="form-group">
-      <%= form.text_area :body, class: 'form-control', rows: '3', required: true %>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit" style="margin-top: 10px;">Отправить</button>
 
-</main>
   <% end %>
-

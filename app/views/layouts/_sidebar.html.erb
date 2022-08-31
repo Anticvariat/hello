@@ -15,16 +15,10 @@
         <% end %>
       <% end %>
 
-         <% if params[:controller] == 'articles' && params[:action] == 'show' %>
-            <%= link_to edit_article_path(@article) do %>
-            <%= image_tag 'chat-dots.svg', width: '32', height: '32', alt: 'Edit article', class: 'fill', title: 'Edit article' %>
-        <% if user_signed_in? && current_user.id == @article.user_id%>
+         <% if params[:controller] == 'articles' && params[:action] == 'show' && user_signed_in? && current_user.id == @article.user_id %>
           <%= link_to edit_article_path(@article) do %>
             <%= image_tag 'pencil-square.svg', width: '32', height: '32', alt: 'Edit article', class: 'fill', title: 'Edit article' %>
             <% end %>
-
-        <% end %>
-      <% end %>
       <% end %>
     </div>
   </li>

@@ -143,7 +143,7 @@
   background: linear-gradient(40deg, var(--navbar-color) 35%, var(--gradient));
   border-radius: 25px;
   color: var(--black);
-  line-height: 2.5em;
+  line-height: 2em;
   margin: auto;
   min-width: 300px;
   padding: 30px;
@@ -157,6 +157,12 @@
   float: right;
   font-size: calc(.25em + .5vw);
   text-align: right;
+}
+
+.grey-small-text {
+  color: var(--grey);
+  display: block;
+  font-size: calc(.5em + .5vw);
 }
 
 .blog-post-status {
@@ -246,4 +252,9 @@
   padding: 15px;
   position: absolute;
   width: 350px;
+}
+
+.padding-5 {
+    padding-right: 5px;
+    padding-left: 5px;
 }

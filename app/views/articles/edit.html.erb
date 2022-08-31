@@ -1,2 +1,7 @@
-<h1>Edit Article</h1>
-<%= render "form", article: @article %>
+<% if current_user.id == @article.user_id %>
+  <h1 class="mid">Редактирование статьи</h1>
+  <%= render 'form', article: @article %>
+<% else %>
+<div class="notice text-center fixed-bottom">Access denied</div>
+<h1 class="mid">Редактирование недоступно</h1>
+<% end %>

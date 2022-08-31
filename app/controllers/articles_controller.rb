@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
   def index
-    @articles = Article.all
+    @articles = Article.where(user_id: current_user, status: 'public')
   end
 
   def show

@@ -1,19 +1,20 @@
-<% if !@article.draft? %>
-<h1><%= @article.title %></h1>
-<p><%= @article.body %></p>
-<% if current_user.id == @article.user_id %>
-    <%= link_to "Редактировать", edit_article_path(@article) %><br>
-    <%= link_to "К моим статьям", articles_path %><br>
-<% end %>
+<% if @article.draft? %>
+  <% if user_signed_in? && current_user.id == @article.user_id %>
+    <hr>
+    <h1 class="article-title"><%= @article.title %></h1>
+    <p class="blog-post-status">Статус: черновик</p>
+    <hr>
+    <div class="blog-post">
+        <div><%= @article.body %></div><hr>
+        <%= link_to 'К моим статьям', articles_path %><br>
+    </div>
+  <% else %>
+    <div class="notice text-center fixed-bottom">Access denied</div>
+    <h1 class="mid">Содержимое недоступно</h1>
+  <% end %>
 <% else %>
-<% if current_user.id == @article.user_id %>
-<h1><%= @article.title %></h1>
-<p><%= @article.body %></p>
-<%= link_to "Редактировать", edit_article_path(@article) %>  
-<% else %>
-Содержимое недоступно
+  <hr><h1 class="article-title"><%= @article.title %></h1><hr>
+  <div class="blog-post">
+  <div><%= @article.body %></div>
+  </div>
 <% end %>
-
-<% end %>
-
-<%= link_to 'Назад', :back %>

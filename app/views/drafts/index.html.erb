@@ -1,18 +1,14 @@
-<h1>Articles#drafts</h1>
-
-<ul>
+<h1 class="mid">Мои черновики</h1>
+  <% if @articles.count > 0 %>
+<div class="blog-posts-list">
   <% @articles.each do |article| %>
-  <% if current_user.id == article.user_id %>
-    <% unless !article.draft? %>
-      <li>
-      	<a href="<%= article_path(article) %>/edit">
-        <%= article.title %>
-      </li>
-    <% end %>
-        <% end %>
+        <div class="blog-post-item">
+          <%= link_to article.title, edit_article_path(article) %>  <p class="blog-post-meta "><%= article.user.first_name %> <%= article.user.last_name %><br><%= article.created_at.strftime('%d.%m.%Y в %H:%M') %></p>
+        </div>
+        <hr>
   <% end %>
-
-
-
-</ul>
-<%= link_to "Домой", root_path %>
+  <%= link_to 'К моим статьям', articles_path %>
+</div>
+<% else %>
+  <h2 class="article-title">У Вас нет черновиков</h2>
+<% end %>

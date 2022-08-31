@@ -1,0 +1,249 @@
+:root {
+  --article-back: #7fc7ff;
+  --articles-back: #b8dffc;
+  --black: #000000;
+  --gradient: #ddddff;
+  --navbar-color: #7fc7ff;
+  --sidebar-color: #111;
+  --white: #ffffff;
+}
+
+@font-face {
+  font-family: 'AlexBrush-Regular';
+  src: url('AlexBrush-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Onest';
+  src: url('Onest.ttf') format('truetype');
+}
+
+.sidebar {
+  background-color: var(--sidebar-color);
+  height: 100%;
+  margin-top: 80px;
+  overflow-x: hidden;
+  width: 80px;
+}
+
+.navb {
+  background-color: var(--navbar-color);
+  height: 80px;
+}
+
+.dropdown-toggle {
+  color: var(--black);
+  font-family: Onest, Tahoma, serif;
+  font-size: calc(.5em + 1vw);
+}
+
+.navbar-image-left {
+  margin-left: 24px;
+  margin-right: .5em;
+  text-decoration: none;
+}
+
+.navbar-image-right {
+  margin-left: .5em;
+  margin-right: 24px;
+}
+
+.nav-item {
+  a:active,
+  ahover,
+  a {
+    color: var(--black);
+    text-decoration: none;
+  }
+}
+
+.logo a {
+  color: var(--white);
+  font-family: AlexBrush-Regular, Tahoma, serif;
+  font-size: calc(0.5em + 3vw);
+  text-decoration: none;
+  text-shadow: 1.5px 0 1.5px var(--black), 0 1.5px 1.5px var(--black), -1.5px 0 1.5px var(--black), 0 -1.5px 1.5px var(--black);
+}
+
+.main-content {
+  background: linear-gradient(to left, var(--articles-back) 1%, var(--white));
+  min-height: 100%;
+  padding-left: 80px;
+  padding-top: 100px;
+  position: absolute;
+  width: 100%;
+}
+
+.articles-background {
+  background: linear-gradient(to left, var(--articles-back) 1%, var(--white));
+  border: 0;
+  height: 100%;
+  margin-top: -20px;
+  padding-bottom: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.blog-posts-list {
+  background: linear-gradient(40deg, var(--navbar-color) 35%, var(--gradient));
+  border-radius: 25px;
+  margin: auto;
+  min-width: 300px;
+  padding: 30px;
+  width: 60%;
+}
+
+.label {
+  font-family: Onest, Tahoma, serif;
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.description {
+  font-size: 12px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.blog-post-item {
+  background-color: var(--white);
+  border-radius: 10px;
+  font-size: 24px;
+  padding: 5px;
+
+  a {
+    color: var(--black);
+    font-family: Onest, Tahoma, serif;
+    font-size: calc(.25em + 2vw);
+    text-decoration: none;
+    word-wrap: break-word;
+  }
+}
+
+.article-title {
+  font-family: Onest, Tahoma, serif;
+  font-size: calc(1em + 3vw);
+  margin: auto;
+  min-width: 300px;
+  padding: .5em;
+  text-align: center;
+  width: 80%;
+  word-wrap: break-word;
+
+  a {
+    color: var(--black);
+    text-decoration: none;
+  }
+}
+
+.blog-post {
+  background: linear-gradient(40deg, var(--navbar-color) 35%, var(--gradient));
+  border-radius: 25px;
+  color: var(--black);
+  line-height: 2.5em;
+  margin: auto;
+  min-width: 300px;
+  padding: 30px;
+  width: 60%;
+  word-wrap: break-word;
+}
+
+.blog-post-meta {
+  color: var(--grey);
+  display: block;
+  float: right;
+  font-size: calc(.25em + .5vw);
+  text-align: right;
+}
+
+.blog-post-status {
+  color: var(--grey);
+  font-size: calc(.5em + .5vw);
+  min-width: 300px;
+  text-align: center;
+}
+
+.article-body {
+  font-family: Onest, Tahoma, serif;
+  font-size: calc(.35em + .5vw);
+}
+
+.pagination a {
+  color: var(--black);
+  font-family: Onest, Tahoma, serif;
+  font-size: calc(.5em + 1vw);
+  margin-right: 1em;
+  text-decoration: none;
+}
+
+.active {
+  color: var(--white);
+  font-size: calc(1em + 1vw);
+}
+
+.mid {
+  text-align: center;
+}
+
+.fill {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(65deg) brightness(105%) contrast(103%);
+  margin-bottom: 2em;
+}
+
+.articles {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+}
+
+.form-signup,
+.form-signin,
+.form-edit,
+.form-contact,
+.form-edit-article {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.btn-primary {
+  margin-top: 10px;
+}
+
+.form-contact textarea,
+.form-edit-article textarea {
+  height: 116px;
+  resize: none;
+}
+
+.form-info {
+  max-width: 500px;
+
+  span {
+    font-family: Onest, Tahoma, serif;
+    font-size: 2em;
+  }
+}
+
+.form-floating select {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.notice {
+  border-radius: 15px;
+  font-family: Onest, Tahoma, serif;
+  font-size: 1.5em;
+  left: 50%;
+  margin-bottom: 10px;
+  margin-left: -135px;
+  padding: 15px;
+  position: absolute;
+  width: 350px;
+}

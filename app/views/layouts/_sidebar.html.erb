@@ -1,10 +1,31 @@
-<div class='sidebar'>
-	<side>
-		<ul>
-			<p><%= link_to "Статьи", all_articles_path %></p>
-			<p><%= link_to "About me", about_me_path%></p>
-			<p><%= link_to "Contact me", about_me_contact_me_path %></p>
-			<a>Application owner: Evgeny Yurtaev</a>
-		</ul>
-	</side>
+<div class="sidebar p-3 text-bg-dark fixed-top">
+<ul class="nav flex-column mb-auto">
+  <li>
+    <div class="mid">
+        <%= link_to root_path do %>
+          <%= image_tag 'house.svg', width: '32', height: '32', alt: 'Home', class: 'fill', title: 'Home' %>
+        <% end %>
+        <%= link_to all_articles_path do %>
+          <%= image_tag 'list.svg', width: '32', height: '32', alt: 'Articles', class: 'fill', title: 'All articles' %>
+        <% end %>
+
+      <% if current_page?(all_articles_path) || current_page?(articles_path) || current_page?(drafts_path) %>
+        <%= link_to new_article_path do %>
+          <%= image_tag 'plus.svg', width: '32', height: '32', alt: 'New article', class: 'fill', title: 'New article' %>
+        <% end %>
+      <% end %>
+
+         <% if params[:controller] == 'articles' && params[:action] == 'show' %>
+        <% if user_signed_in? %>
+                  <% if current_user.id == @article.user_id %>
+        <%= link_to edit_article_path(@article) do %>
+          <%= image_tag 'pencil-square.svg', width: '32', height: '32', alt: 'Edit article', class: 'fill', title: 'Edit article' %>
+        <% end %>
+
+          <% end %>
+      <% end %>
+      <% end %>
+    </div>
+  </li>
+  </ul>
 </div>

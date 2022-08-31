@@ -11,7 +11,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootstrap', '~> 5.2.0'
 gem 'devise'
+gem 'erb_lint', require: false
 gem 'jbuilder', '~> 2.7'
 gem 'kaminari'
 gem 'puma', '~> 4.1'
@@ -22,7 +24,6 @@ gem 'rubocop-rspec', require: false
 gem 'sass-rails', '>= 6'
 gem 'scss_lint', require: false
 gem 'slim_lint'
-gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.4.3'
 
 group :development, :test do
@@ -41,6 +42,7 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
+  gem 'capybara-screenshot'
   gem 'faker'
   gem 'selenium-webdriver'
   gem 'webdrivers'

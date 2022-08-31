@@ -1,16 +1,13 @@
-<h1>Мои статьи</h1>
-
-
-<ul>
+<h1 class="mid">Мои статьи</h1>
+<% if @articles.count > 0 %>
+<div class="blog-posts-list">
   <% @articles.each do |article| %>
-  <% if current_user.id == article.user_id %>
-    <% unless article.draft? %>
-      <li>
-        <%= link_to article.title, article %>
-      </li>
-    <% end %>
-    <% end %>
+        <div class="blog-post-item">
+          <%= link_to article.title, edit_article_path(article) %>  <p class="blog-post-meta "><%= article.user.first_name %> <%= article.user.last_name %><br><%= article.created_at.strftime('%d.%m.%Y в %H:%M') %></p>
+        </div>
+        <hr>
   <% end %>
-</ul>
-
-<%= link_to "Создать статью", new_article_path %><br>
+  </div>
+<% else %>
+  <h2 class="article-title">У Вас нет статей</h2>
+<% end %>

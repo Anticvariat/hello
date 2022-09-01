@@ -17,7 +17,6 @@
   <div class="blog-post">
   <div><%= simple_format(@article.body) %></div>
   </div>
+  <hr>
+  <%= render 'comments', article: @article %>
 <% end %>
-<hr>
-
- <%= render 'comments', article: @article %>

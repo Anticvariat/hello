@@ -2,11 +2,11 @@ class CommentsController < ApplicationController
 	def create
 	  @article = Article.find(params[:article_id])
 	  @comment = @article.comments.new(comment_params)
-	  @comment.user_id = current_user.id
+	  @comment.commenter = current_user.first_name
 	  if @comment.save
  	  	redirect_to article_path(@article)
  	  else
- 	  	#render :new, status: :unprocessable_entity
+ 	  	#redirect_to article_path(@article), status: :unprocessable_entity
  	  end
 	end
 

@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :comment do
-    commenter { "MyString" }
-    body { "MyText" }
-    article { nil }
+    commenter { "rspec" }
+    body { "rspeccomment" }
+    article_id { 1 }
   end
 end

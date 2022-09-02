@@ -3,6 +3,7 @@
   --articles-back: #b8dffc;
   --black: #000000;
   --gradient: #ddddff;
+  --error: #ff0000;
   --navbar-color: #7fc7ff;
   --sidebar-color: #111;
   --white: #ffffff;
@@ -263,4 +264,11 @@
 .padding-5 {
     padding-right: 5px;
     padding-left: 5px;
+}
+
+.comments_errors {
+  color: var(--error);
+  font-family: Onest, Tahoma, serif;
+  padding: 10px;
+  text-align: center;
 }

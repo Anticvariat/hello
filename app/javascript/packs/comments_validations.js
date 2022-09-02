@@ -8,7 +8,7 @@ function isValid() {
     }
 
   if (body.length < 10) {
-    document.getElementById("error_explanation").innerHTML = "Комментарий должен содержать не менее 10 символов!";
+    document.getElementById("errors").innerHTML = "Комментарий должен содержать не менее 10 символов!";
     return false;
   }
 

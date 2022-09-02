@@ -19,8 +19,10 @@
   <div class="mid" style="padding-bottom: 250px;">
 <% article.comments.each do |comment| %>
     <% if comment.commenter != nil %>
-      <%= comment.commenter %>: <%= comment.body %><%= link_to "Delete", @comment, method: :delete, data: { confirm: "Really?" } %><br>
-      
+      <%= comment.commenter %>: <%= comment.body %> 
+      <% if current_user.id == 1 %>
+        <%= link_to "x", [comment.article, comment], method: :delete, data: { confirm: "Вы уверены?" } %><br>
+      <% end %>
     <% end %>
 
 <% end %>

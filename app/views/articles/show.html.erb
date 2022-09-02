@@ -17,6 +17,9 @@
   <div class="blog-post">
   <div><%= simple_format(@article.body) %></div>
   </div>
+  <% if current_user.id == @article.user_id %>
+    <%= link_to "Удалить статью", @article, method: :delete, data: { confirm: "Вы уверены?" } %>
+  <% end %>
   <hr>
   <%= render 'comments', article: @article %>
 <% end %>

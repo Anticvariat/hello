@@ -5,7 +5,7 @@
   <div class="row align-items-center">
       <%= form.hidden_field :commenter, value: current_user.first_name %>
     <div class="col-7 padding-5">
-      <%= form.text_field :body, class: 'form-control', rows: '3', placeholder: 'Ваш комментарий', required: true %>
+      <%= form.text_field :body, class: 'form-control', rows: '3', id: 'comment_body',placeholder: 'Ваш комментарий', required: true %>
     </div>
     <div class="col-5 padding-5">
       <button class="w-100 btn btn-primary" type="submit">Отправить</button>
@@ -16,7 +16,7 @@
 <% end %>
 <h2 class="mid title" style="margin: 10px; font">Комментарии</h2>
 <% if article.comments.count > 0 %>
-  <div class="mid" style="padding-bottom: 100px;">
+  <div class="mid" style="padding-bottom: 250px;">
 <% article.comments.each do |comment| %>
     <% if comment.commenter != nil %>
       <%= comment.commenter %>: <%= comment.body %><br>
@@ -37,3 +37,6 @@
 <% end %>
 </div>
 <% end %>
+
+<%= javascript_pack_tag 'comments_validations' %>
+<div class="notice text-center fixed-bottom" id="error_explanation" style="width: 50;"></div>

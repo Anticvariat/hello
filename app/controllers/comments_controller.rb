@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
 	  @article = Article.find(params[:article_id])
 	  @comment = @article.comments.new(comment_params)
 	  @comment.commenter = current_user.first_name
+	  @comment.author_id = current_user.id
 	  if @comment.save
  	  	redirect_to article_path(@article)
  	  else

@@ -16,10 +16,11 @@
   <h1 class="article-title"><%= @article.title %></h1>
   <div class="blog-post">
   <div><%= simple_format(@article.body) %></div>
-  </div>
-  <% if current_user.id == @article.user_id %>
-    <%= link_to "Удалить статью", @article, method: :delete, data: { confirm: "Вы уверены?" } %>
+    <% if current_user.id == @article.user_id %>
+    <%= link_to "Удалить статью", @article, class: "delete-link", method: :delete, data: { confirm: "Вы уверены?" } %>
   <% end %>
+  </div>
+
   <hr>
   <%= render 'comments', article: @article %>
 <% end %>

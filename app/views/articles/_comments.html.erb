@@ -20,14 +20,14 @@
 <% article.comments.each do |comment| %>
     <% if comment.commenter != nil %>
       <%= comment.commenter %>: <%= comment.body %> 
-      <% if current_user.id == 1 %>
+      <% if  %>
         <%= link_to "x", [comment.article, comment], method: :delete, data: { confirm: "Вы уверены?" } %><br>
       <% end %>
     <% end %>
 
 <% end %>
 <% else %>
-  <div class="mid grey-small-text" style="text-align: center; float: center;">пока что ничего нет</div>
+  <div class="mid grey-small-text" style="text-align: center; float: center; padding-bottom: 250px;">пока что ничего нет</div>
 <% end %>
 </div>
 <% end %>

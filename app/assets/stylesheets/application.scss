@@ -3,7 +3,7 @@
   --articles-back: #b8dffc;
   --black: #000000;
   --gradient: #ddddff;
-  --error: #ff0000;
+  --red: #ff0000;
   --navbar-color: #7fc7ff;
   --sidebar-color: #111;
   --white: #ffffff;
@@ -267,8 +267,14 @@
 }
 
 .comments_errors {
-  color: var(--error);
+  color: var(--red);
   font-family: Onest, Tahoma, serif;
   padding: 10px;
   text-align: center;
+}
+
+.delete-link {
+  color: var(--red);
+  font-size: 14px;
+  text-decoration: none;
 }

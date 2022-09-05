@@ -19,12 +19,11 @@
   <div class="mid" style="padding-bottom: 250px;">
 <% article.comments.each do |comment| %>
     <% if comment.commenter != nil %>
-      <%= comment.commenter %>: <%= comment.body %>
+      <%= User.find_by(id: comment.author_id).first_name %>: <%= comment.body %>
         <% if current_user.id == comment.author_id %>
-          <%= link_to "x", [comment.article, comment], class: "delete-link", title: "Удалить комментарий", method: :delete, data: { confirm: "Вы уверены?" } %><br>
-        <% else %>
-          <br> 
+          <%= link_to "x", [comment.article, comment], class: "delete-link", title: "Удалить комментарий", method: :delete %>
         <% end %>
+        <br> 
     <% end %>
 <% end %>
 <% else %>

@@ -11,6 +11,6 @@ class AboutMeController < ApplicationController
   private
 
   def contact_me_params
-    params.permit(:first_name, :email, :message_body)
+    params.permit(:first_name, :email, :message_body, :authenticity_token)
   end
 end

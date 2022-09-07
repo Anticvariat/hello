@@ -16,7 +16,7 @@
   <h1 class="article-title"><%= @article.title %></h1>
   <div class="blog-post">
   <div><%= simple_format(@article.body) %></div>
-    <% if current_user.id == @article.user_id %>
+    <% if user_signed_in? && current_user.id == @article.user_id %>
     <%= link_to "Удалить статью", @article, class: "delete-link", data: {
                     turbo_method: :delete,
                     confirm: "Вы уверены?"

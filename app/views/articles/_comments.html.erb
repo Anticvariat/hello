@@ -21,7 +21,7 @@
     <% if comment.body != nil %>
       <%= User.find_by(id: comment.author_id).first_name %>: <%= comment.body %> 
       <div class="blog-post-meta"><%= comment.created_at.strftime('%d.%m.%Y в %H:%M') %></div>
-        <% if current_user.id == comment.author_id %>
+        <% if user_signed_in? && current_user.id == comment.author_id %>
           <%= link_to "x", [comment.article, comment], class: "delete-link", title: "Удалить комментарий", data: {
                     turbo_method: :delete,
                   }%>

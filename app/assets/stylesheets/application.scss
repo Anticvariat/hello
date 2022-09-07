@@ -157,7 +157,7 @@
   color: var(--grey);
   display: block;
   float: right;
-  font-size: calc(.25em + .5vw);
+  font-size: calc(.25em + .5vh);
   text-align: right;
 }
 
@@ -276,4 +276,13 @@
 .delete-link {
   color: var(--red);
   text-decoration: none;
+}
+
+.comments {
+  margin: auto;
+  margin-bottom: 300px;
+  min-width: 300px;
+  padding-bottom: 250px;
+  width: 60%;
+  word-wrap: break-word;
 }

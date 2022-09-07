@@ -29,6 +29,9 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Compile Webpacker
+        run: rails webpacker:compile
+
       - name: Quality check
         run: bin/quality
 

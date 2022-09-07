@@ -18,7 +18,7 @@
 <% if article.comments.count > 0 %>
   <div class="mid" style="padding-bottom: 250px;">
 <% article.comments.each do |comment| %>
-    <% if comment.commenter != nil %>
+    <% if comment.body != nil %>
       <%= User.find_by(id: comment.author_id).first_name %>: <%= comment.body %>
         <% if current_user.id == comment.author_id %>
           <%= link_to "x", [comment.article, comment], class: "delete-link", title: "Удалить комментарий", method: :delete %>

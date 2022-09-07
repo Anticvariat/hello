@@ -4,13 +4,10 @@ class CommentsController < ApplicationController
 	  @comment = @article.comments.new(comment_params)
 	  
 	  @comment.author_id = current_user.id
-	  @comment.commenter = current_user.first_name
 
 	  if @comment.save
  	  	redirect_to article_path(@article)
- 	  else
- 	  	#render :show, status: :unprocessable_entity??????
- 	  end
+      end
 	end
 
 	def destroy
@@ -22,6 +19,6 @@ class CommentsController < ApplicationController
 
 private
 	def comment_params
-		params.require(:comment).permit(:commenter, :body, :author_id)
+		params.require(:comment).permit(:author_id, :body )
 	end
 end

@@ -3,8 +3,8 @@
   --articles-back: #b8dffc;
   --black: #000000;
   --gradient: #ddddff;
-  --red: #ff0000;
   --navbar-color: #7fc7ff;
+  --red: #ff0000;
   --sidebar-color: #111;
   --white: #ffffff;
 }
@@ -69,8 +69,8 @@
 }
 
 .main-content {
-  font-size: calc(0.5em + 1vw);
   background: linear-gradient(to left, var(--articles-back) 1%, var(--white));
+  font-size: calc(0.5em + 1vw);
   min-height: 100%;
   padding-left: 80px;
   padding-top: 100px;
@@ -262,11 +262,11 @@
 }
 
 .padding-5 {
-    padding-right: 5px;
-    padding-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-.comments_errors {
+.comments-errors {
   color: var(--red);
   font-family: Onest, Tahoma, serif;
   padding: 10px;

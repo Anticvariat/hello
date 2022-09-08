@@ -1,4 +1,6 @@
 ---
+exclude:
+  - '**/kaminari/**'
 linters:
   Rubocop:
     enabled: true

@@ -1,4 +1,5 @@
 ---
+glob: "**/*.{html,text,js}{+*,}.erb"
 exclude:
   - '**/kaminari/**'
 linters:

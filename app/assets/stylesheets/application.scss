@@ -99,7 +99,7 @@
 
 .label {
   font-family: Onest, Tahoma, serif;
-  font-size: 1.5em;
+  font-size: 26px;
   margin-bottom: 5px;
   text-align: left;
 }
@@ -161,6 +161,12 @@
   text-align: right;
 }
 
+.author-meta {
+  color: var(--grey);
+  font-size: calc(.25em + .5vh);
+  text-align: right;
+}
+
 .grey-small-text {
   color: var(--grey);
   display: block;
@@ -211,11 +217,18 @@
 
 .form-signup,
 .form-signin,
-.form-edit,
 .form-contact,
 .form-edit-article {
   max-width: 330px;
   padding: 15px;
+}
+
+.form-edit {
+  max-width: 800px;
+}
+
+.form-control, {
+  height: 56px;
 }
 
 .btn-primary {

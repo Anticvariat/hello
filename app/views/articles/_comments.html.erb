@@ -19,7 +19,7 @@
   <div class="comments">
 <% article.comments.each do |comment| %>
     <% if comment.body != nil %>
-      <%= User.find_by(id: comment.author_id).first_name %>: <%= comment.body %>
+      <%= image_tag @user.avatar.variant(resize_to_limit: [24, 24]), style: 'border-radius: 12px;' %> <%= @user.first_name %> <%= @user.last_name %>: <%= comment.body %>
       <div class="blog-post-meta"><%= comment.created_at.strftime('%d.%m.%Y в %H:%M') %></div>
         <% if user_signed_in? && current_user.id == comment.author_id %>
           <%= link_to 'x', [comment.article, comment], class: 'delete-link', title: 'Удалить комментарий', data: {

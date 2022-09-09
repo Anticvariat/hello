@@ -15,6 +15,11 @@
 <% else %>
   <h1 class="article-title"><%= @article.title %></h1>
   <div class="blog-post">
+    <%# user = User.find_by(id: @article.user_id) %>
+    <% if @user.avatar.present? %>
+      <%= image_tag @user.avatar.variant(resize_to_limit: [64, 64]), style: 'border-radius: 32px;' %>
+    <% end %>
+  <%= @user.first_name %> <%= @user.last_name %> <label class="author-meta">(Автор)</label>
   <div><%= simple_format(@article.body) %></div>
     <% if user_signed_in? && current_user.id == @article.user_id %>
     <%= link_to 'Удалить статью', @article, class: 'delete-link', data: {
@@ -23,7 +28,7 @@
         } %>
   <% end %>
   </div>
-
+ 
   <hr>
   <%= render 'comments', article: @article %>
 <% end %>

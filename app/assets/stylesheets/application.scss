@@ -99,7 +99,7 @@
 
 .label {
   font-family: Onest, Tahoma, serif;
-  font-size: 26px;
+  font-size: calc(.25em + 2vh);
   margin-bottom: 5px;
   text-align: left;
 }
@@ -224,11 +224,13 @@
 }
 
 .form-edit {
-  max-width: 800px;
+  max-width: 700px;
 }
 
-.form-control, {
-  height: 56px;
+.form-control {
+  font-family: Onest, Tahoma, serif;
+  font-size: calc(.25em + 1vh);;
+  height: calc(1em + 3vh);
 }
 
 .btn-primary {

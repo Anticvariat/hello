@@ -1,4 +1,4 @@
-<%= form_with model: [article, article.comments.build] do |form| %>
+<%= form_with model: [@article, @article.comments.build] do |form| %>
 <% if user_signed_in? %>
 <h2 class="mid title">Оставить комментарий</h2>
 <div class="container">
@@ -15,13 +15,13 @@
 <hr>
 <% end %>
 <h2 class="mid title" style="margin: 10px; font">Комментарии</h2>
-<% if article.comments.count > 0 %>
+<% if @comments.count > 0 %>
   <div class="comments">
-<% article.comments.each do |comment| %>
+<% @comments.each do |comment| %>
     <% if comment.body != nil %>
-      <%= User.find_by(id: comment.author_id).first_name %>: <%= comment.body %>
+      <%= comment.user.first_name %>: <%= comment.body %>
       <div class="blog-post-meta"><%= comment.created_at.strftime('%d.%m.%Y в %H:%M') %></div>
-        <% if user_signed_in? && current_user.id == comment.author_id %>
+        <% if user_signed_in? && current_user.id == comment.user_id %>
           <%= link_to 'x', [comment.article, comment], class: 'delete-link', title: 'Удалить комментарий', data: {
                 turbo_method: :delete
               } %>

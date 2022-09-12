@@ -2,12 +2,14 @@
 
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
+
   def index
     @articles = Article.where(user_id: current_user, status: 'public')
   end
 
   def show
     @article = Article.find(params[:id])
+    @comments = @article.comments.includes(:user)
   end
 
   def new

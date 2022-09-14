@@ -1,4 +1,8 @@
 ---
+exclude:
+  - '**/vendor/**/*'
+  - '**/node_modules/**/*'
+  - '**/kaminari/**'
 linters:
   Rubocop:
     enabled: true

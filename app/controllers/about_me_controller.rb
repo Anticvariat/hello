@@ -3,8 +3,6 @@
 class AboutMeController < ApplicationController
   def index; end
 
-  def new; end
-
   def create
     OrderMailer.contact_me_mail(contact_me_params).deliver_now
     redirect_to root_path
@@ -13,6 +11,6 @@ class AboutMeController < ApplicationController
   private
 
   def contact_me_params
-    params.permit(:first_name, :email, :message_body)
+    params.permit(:first_name, :email, :message_body, :authenticity_token)
   end
 end

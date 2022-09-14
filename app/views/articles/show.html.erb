@@ -13,8 +13,17 @@
     <h1 class="mid">Содержимое недоступно</h1>
   <% end %>
 <% else %>
-  <hr><h1 class="article-title"><%= @article.title %></h1><hr>
+  <h1 class="article-title"><%= @article.title %></h1>
   <div class="blog-post">
-  <div><%= @article.body %></div>
+  <div><%= simple_format(@article.body) %></div>
+    <% if user_signed_in? && current_user.id == @article.user_id %>
+    <%= link_to 'Удалить статью', @article, class: 'delete-link', data: {
+          turbo_method: :delete,
+          confirm: 'Вы уверены?'
+        } %>
+  <% end %>
   </div>
+
+  <hr>
+  <%= render 'comments' %>
 <% end %>

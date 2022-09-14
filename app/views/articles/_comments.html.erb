@@ -1,0 +1,38 @@
+<%= form_with model: [@article, @article.comments.build] do |form| %>
+<% if user_signed_in? %>
+<h2 class="mid title">Оставить комментарий</h2>
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-7 padding-5">
+      <%= form.text_field :body, class: 'form-control', rows: '3', id: 'comment_body', placeholder: 'Ваш комментарий', required: true %>
+    </div>
+    <div class="col-5 padding-5">
+      <button class="w-100 btn btn-primary" type="submit" id="send_comment">Отправить</button>
+    </div>
+  </div>
+</div>
+<div class="comments-errors" id="errors"></div>
+<hr>
+<% end %>
+<h2 class="mid title" style="margin: 10px; font">Комментарии</h2>
+<% if @comments.count > 0 %>
+  <div class="comments" id="comments">
+<% @comments.each do |comment| %>
+    <% if comment.body != nil %>
+      <%= comment.user.first_name %>: <%= comment.body %>
+      <div class="blog-post-meta"><%= comment.created_at.strftime('%d.%m.%Y в %H:%M') %></div>
+        <% if user_signed_in? && current_user.id == comment.user_id %>
+          <%= link_to 'x', [comment.article, comment], class: 'delete-link', title: 'Удалить комментарий', data: {
+                turbo_method: :delete
+              } %>
+        <% end %>
+        <br>
+    <% end %>
+<% end %>
+<% else %>
+  <div class="mid grey-small-text" style="text-align: center; float: center; padding-bottom: 250px;">пока что ничего нет</div>
+<% end %>
+</div>
+<% end %>
+
+<%= javascript_pack_tag 'comments_validations' %>

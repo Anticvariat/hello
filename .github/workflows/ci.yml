@@ -35,5 +35,11 @@ jobs:
       - name: Setub db
         run: bin/rails db:setup
 
+      - name: Yarn Install
+        run: yarn install
+
+      - name: Compile Webpacker
+        run: bundle exec rails webpacker:compile
+
       - name: Run tests
         run: bin/test

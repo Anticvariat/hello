@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   get 'about_me', to: 'about_me#index'
   get 'about_me/contact_me', to: 'about_me#contact_me'
 
-  resources :articles
-  resources :drafts
-  resources :all_articles
-  resources :about_me
+  resources :articles do
+    resources :comments, only: %i[create destroy]
+  end
+  resources :drafts, only: [:index]
+  resources :all_articles, only: [:index]
+  resources :about_me, only: %i[index create]
 
   devise_for :users
 

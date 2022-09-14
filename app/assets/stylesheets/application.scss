@@ -4,6 +4,7 @@
   --black: #000000;
   --gradient: #ddddff;
   --navbar-color: #7fc7ff;
+  --red: #ff0000;
   --sidebar-color: #111;
   --white: #ffffff;
 }
@@ -69,6 +70,7 @@
 
 .main-content {
   background: linear-gradient(to left, var(--articles-back) 1%, var(--white));
+  font-size: calc(0.5em + 1vh);
   min-height: 100%;
   padding-left: 80px;
   padding-top: 100px;
@@ -140,10 +142,10 @@
 }
 
 .blog-post {
-  background: linear-gradient(40deg, var(--navbar-color) 35%, var(--gradient));
+  background: linear-gradient(10deg, var(--navbar-color) 5%, var(--gradient));
   border-radius: 25px;
   color: var(--black);
-  line-height: 2.5em;
+  line-height: 2em;
   margin: auto;
   min-width: 300px;
   padding: 30px;
@@ -155,8 +157,14 @@
   color: var(--grey);
   display: block;
   float: right;
-  font-size: calc(.25em + .5vw);
+  font-size: calc(.25em + .5vh);
   text-align: right;
+}
+
+.grey-small-text {
+  color: var(--grey);
+  display: block;
+  font-size: calc(.5em + .5vw);
 }
 
 .blog-post-status {
@@ -239,11 +247,41 @@
 .notice {
   border-radius: 15px;
   font-family: Onest, Tahoma, serif;
-  font-size: 1.5em;
+  font-size: calc(0.5em + 1vh);
   left: 50%;
   margin-bottom: 10px;
-  margin-left: -135px;
+  margin-left: -110px;
   padding: 15px;
   position: absolute;
-  width: 350px;
+  width: 300px;
+}
+
+.title {
+  font-family: Onest, Tahoma, serif;
+  font-size: 1.5em;
+}
+
+.padding-5 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.comments-errors {
+  color: var(--red);
+  font-family: Onest, Tahoma, serif;
+  padding: 10px;
+  text-align: center;
+}
+
+.delete-link {
+  color: var(--red);
+  text-decoration: none;
+}
+
+.comments {
+  margin: auto;
+  min-width: 300px;
+  padding-bottom: 250px;
+  width: 60%;
+  word-wrap: break-word;
 }

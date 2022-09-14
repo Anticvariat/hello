@@ -19,6 +19,9 @@ Metrics/BlockLength:
     - config/**/*
     - spec/**/*
 
+Metrics/AbcSize:
+  Enabled: false
+
 Rails/I18nLocaleTexts:
   Enabled: false
 

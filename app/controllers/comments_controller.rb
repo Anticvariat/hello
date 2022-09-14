@@ -5,7 +5,11 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.new(comment_params)
     @comment.user_id = current_user.id
-    redirect_to article_path(@article) if @comment.save
+    if @comment.save
+      redirect_to article_path(@article)
+    else
+      redirect_to article_path(@article), alert: @comment.errors.full_messages.to_sentence
+    end
   end
 
   def destroy

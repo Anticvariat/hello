@@ -16,7 +16,7 @@
 <% end %>
 <h2 class="mid title" style="margin: 10px; font">Комментарии</h2>
 <% if @comments.count > 0 %>
-  <div class="comments">
+  <div class="comments" id="comments">
 <% @comments.each do |comment| %>
     <% if comment.body != nil %>
       <%= comment.user.first_name %>: <%= comment.body %>

@@ -16,18 +16,22 @@
 <% end %>
 <h2 class="mid title" style="margin: 10px; font">Комментарии</h2>
 <div style="padding-bottom: 250px;">
-  
+
 <% if @comments.count > 0 %>
     <% @comments.each do |comment| %>
         <% if comment.body != nil %>
 
-          <div class="row" style="max-width: 95%; margin-left: 2.5%; padding-bottom: 5px;">
+          <div class="row" id="comments-row" style="max-width: 95%; margin-left: 2.5%; padding-bottom: 5px;">
             <div class="form-group col-2" style="text-align: right;">
-              <%= image_tag comment.user.avatar.variant(resize_to_fill: [48, 48]), style: 'border-radius: 50%; text-align: right' %> 
+              <% if comment.user.avatar.present? %>
+                <%= image_tag comment.user.avatar.variant(resize_to_fill: [48, 48]), style: 'border-radius: 50%; text-align: right' %>
+              <% else %>
+                <%= image_tag 'person-circle.svg', width: '48', height: '48' %>
+              <% end %>
             </div>
             <div class="form-group col-2 comments-font">
             <%= comment.user.first_name %> <%= comment.user.last_name %>
-            <% if comment.user_id == @article.user_id%>
+            <% if comment.user_id == @article.user_id %>
               <label class="author-meta">(Автор)</label>
             <% end %>
             </div>
@@ -35,8 +39,8 @@
             <%= comment.body %>
             <% if user_signed_in? && current_user.id == comment.user_id %>
               <%= link_to 'x', [comment.article, comment], class: 'delete-link', title: 'Удалить комментарий', data: {
-                turbo_method: :delete
-              } %>
+                    turbo_method: :delete
+                  } %>
             <% end %>
             </div>
             <div class="form-group col-2 blog-post-meta">

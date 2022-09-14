@@ -31,16 +31,13 @@
 
       <div class="form-group col-5 mid">
     <% if current_user.avatar.present? %>
-         <label class="label">Ваше фото</label><br> <%= image_tag current_user.avatar.variant(resize_to_fill: [300, 300]), style: 'border-radius: 10px; width: 100%;'%>
+         <label class="label">Ваше фото</label><br> <%= image_tag current_user.avatar.variant(resize_to_fill: [300, 300]), style: 'border-radius: 10px; width: 100%;' %>
     <% else %>
-            <%= image_tag 'person-circle.svg', width: '200', height: '200', alt: 'Profile', title: 'Profile', class: 'mid' %> 
+            <%= image_tag 'person-circle.svg', width: '200', height: '200', alt: 'Profile', title: 'Profile', class: 'mid' %>
     <% end %>
-    <label style="padding-top: 10px; margin-bottom: -50px;"><%= f.file_field :avatar, class: "form-control", style: "padding-top: 12px;" %></label>
+    <label style="padding-top: 10px; margin-bottom: -50px;"><%= f.file_field :avatar, class: 'form-control', style: 'padding-top: 12px;' %></label>
     </div>
   </div>
-
-
-
 
     <div class="text-center">
     <button class="w-100 btn btn-lg btn-primary" type="submit">Сохранить</button>

@@ -12,7 +12,7 @@ RSpec.describe 'Create Comment' do
       visit article_path(article.id)
       fill_in 'comment_body', with: 'comment with valid params'
       click_button 'Отправить'
-      section = find_by_id('comments')
+      section = find_by_id('comments-row')
       expect(section).to have_content user.first_name
     end
   end

@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to article_path(@article)
     else
-      redirect_to article_path(@article), alert: @comment.errors.full_messages.to_s
+      redirect_to article_path(@article), alert: @comment.errors.full_messages.to_sentence
     end
   end
 

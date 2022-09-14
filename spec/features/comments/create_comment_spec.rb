@@ -14,6 +14,7 @@ RSpec.describe 'Create Comment' do
       click_button 'Отправить'
       section = find_by_id('comments-row')
       expect(section).to have_content user.first_name
+      expect(section).to have_content 'comment with valid params'
     end
   end
 end

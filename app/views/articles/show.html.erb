@@ -17,8 +17,11 @@
   <div class="blog-post">
     <% if @article.user.avatar.present? %>
       <%= image_tag @article.user.avatar.variant(resize_to_limit: [64, 64]), style: 'border-radius: 32px;' %>
+    <% else %>
+    <%= image_tag 'person-circle.svg', width: '64', height: '64' %>
     <% end %>
   <%= @article.user.first_name %> <%= @article.user.last_name %> <label class="author-meta">(Автор)</label>
+  <div class="blog-post-meta"><%= @article.created_at.strftime('%d.%m.%Y в %H:%M') %></div>
   <div><%= simple_format(@article.body) %></div>
     <% if user_signed_in? && current_user.id == @article.user_id %>
     <%= link_to 'Удалить статью', @article, class: 'delete-link', data: {

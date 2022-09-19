@@ -3,27 +3,25 @@
 require 'rails_helper'
 
 describe Comment do
+  VALID_BODY = 'valid body'
+  SHORT_BODY = 'hi'
+  let(:user) { User.new(email: '1@1.1', password: '123456', first_name: 'rspec', last_name: 'user') }
+  let(:article) { Article.new(user: user, title: 'article', body: 'article body', status: 'public') }
+  
   context 'with valid atributes' do
-    let(:comment) { build(:comment) }
+    let(:comment) { Comment.new(user: user, article: article, body: VALID_BODY) }
 
     it 'is valid' do
       expect(comment).to be_valid
     end
   end
 
-  context 'without body' do
-    let(:comment) { build(:comment, body: nil) }
+  context 'with short body length' do
+    let(:comment) { Comment.new(user: user, article: article, body: SHORT_BODY) }
 
-    it 'is not valid' do
+    it 'is valid' do
       expect(comment).not_to be_valid
     end
   end
 
-  context 'without user' do
-    let(:comment) { build(:comment, user_id: nil) }
-
-    it 'is not valid' do
-      expect(comment).not_to be_valid
-    end
-  end
 end

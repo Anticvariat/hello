@@ -1,4 +1,4 @@
-<%= form_with model: article do |form| %>
+<%= form_with model: article, data: { turbo: false } do |form| %>
 <main class="form-edit-article w-100 m-auto text-center">
   <div>
     <div class="form-group">
@@ -15,12 +15,4 @@
 </div>
 <button class="w-100 btn btn-lg btn-primary" type="submit">Сохранить</button>
 </main>
-<div class="notice text-center fixed-bottom">
-  <% @article.errors.full_messages_for(:title).each do |message| %>
-    <%= message %>
-  <% end %>
-  <% @article.errors.full_messages_for(:body).each do |message| %>
-    <div><%= message %></div>
-  <% end %>
-</div>
 <% end %>

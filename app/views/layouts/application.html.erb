@@ -18,13 +18,13 @@
     <%= render 'layouts/sidebar' %>
 
     <div class="main-content">
-      <%= yield %>
       <% if notice %>
-      <div class="notice text-center fixed-bottom"><%= notice %></div>
+        <div class="notice"><%= notice %></div>
       <% end %>
       <% if alert %>
-      <div class="notice text-center fixed-bottom"><%= alert %></div>
+        <div class="alert" id="alert"><%= alert %></div>
       <% end %>
+      <%= yield %>
     </div>
   </body>
 </html>

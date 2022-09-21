@@ -1,7 +1,7 @@
 <%= form_with url: about_me_index_path do |f| %>
   <h1 class="mid">Написать мне</h1>
   <div class="form-contact w-100 m-auto text-center">
-    <%= f.text_area :message_body, class: 'form-control message-body', placeholder: 'Ваше сообщение', id: 'contact-me-body', required: true %>
+    <%= f.text_area :message_body, class: 'form-control message-body', placeholder: 'Ваше сообщение', id: 'auto-height', required: true %>
     <button class="w-100 btn btn-lg btn-primary" type="submit" style="margin-top: 10px;">Отправить</button>
     <p class="mt-3 mb-3 text-muted">&copy; 2022</p>
   </div>

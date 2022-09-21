@@ -99,7 +99,7 @@
 
 .label {
   font-family: Onest, Tahoma, serif;
-  font-size: 1.5em;
+  font-size: calc(.25em + 2vh);
   margin-bottom: 5px;
   text-align: left;
 }
@@ -161,6 +161,12 @@
   text-align: right;
 }
 
+.author-meta {
+  color: var(--grey);
+  font-size: calc(.25em + .5vh);
+  text-align: right;
+}
+
 .grey-small-text {
   color: var(--grey);
   display: block;
@@ -211,13 +217,13 @@
 
 .form-signup,
 .form-signin,
-.form-edit,
 .form-edit-article {
   max-width: 330px;
   padding: 15px;
 }
 
-.form-contact {
+.form-contact,
+.form-edit {
   max-width: 700px;
   padding-left: 5px;
   padding-right: 5px;
@@ -228,6 +234,13 @@
   min-height: 100px;
   resize: none;
   overflow: hidden;
+}
+
+.form-control {
+  font-family: Onest, Tahoma, serif;
+  font-size: calc(.25em + 1vh);
+  height: calc(1em + 3vh);
+  
 }
 
 .btn-primary {
@@ -295,4 +308,8 @@
   padding-bottom: 250px;
   width: 60%;
   word-wrap: break-word;
+}
+
+.comments-font {
+  font-size: calc(0.25em + 1vh);
 }

@@ -1,4 +1,4 @@
-<%= form_with model: article do |form| %>
+<%= form_with model: article, data: { turbo: false } do |form| %>
 <main class="form-edit-article w-100 m-auto text-center">
   <div>
     <div class="form-group">
@@ -20,7 +20,7 @@
     <%= message %>
   <% end %>
   <% @article.errors.full_messages_for(:body).each do |message| %>
-    <div><%= message %></div>
+    <%= message %>
   <% end %>
 </div>
 <% end %>

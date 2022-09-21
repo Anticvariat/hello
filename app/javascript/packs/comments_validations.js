@@ -3,6 +3,7 @@ function isValid() {
   let alert = document.getElementById("alert")
   
   if (body == null || body.length < 10) {
+    alert.style.visibility = "visible"
     alert.innerHTML = "Комментарий должен содержать не менее 10 символов!";
     return false;
   }

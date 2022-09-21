@@ -223,15 +223,17 @@
   padding-right: 5px;
 }
 
-.message-body {
-  max-height: 100%;
+.form-contact textarea {
+  max-height: 50vw;
+  min-height: 100px;
+  resize: none;
+  overflow: hidden;
 }
 
 .btn-primary {
   margin-top: 10px;
 }
 
-.form-contact textarea,
 .form-edit-article textarea {
   height: 116px;
   resize: none;

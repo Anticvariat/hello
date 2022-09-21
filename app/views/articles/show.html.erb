@@ -13,6 +13,7 @@
     <h1 class="mid">Содержимое недоступно</h1>
   <% end %>
 <% else %>
+  <div class="alert" id="alert" style="visibility: hidden;"></div>
   <h1 class="article-title"><%= @article.title %></h1>
   <div class="blog-post">
   <div><%= simple_format(@article.body) %></div>

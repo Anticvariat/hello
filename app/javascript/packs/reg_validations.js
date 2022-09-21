@@ -4,15 +4,18 @@ function isValid() {
   let password_confirm = document.getElementById("password_confirm").value;
   let first_name = document.getElementById("first_name").value;
   let last_name = document.getElementById("last_name").value;
+  let alert = document.getElementById("alert")
 
   if (email=="" || password=="" || password_confirm=="" || first_name=="" || last_name=="")
     {
-      document.getElementById("error_explanation").innerHTML = "Заполните все поля!";
+      alert.style.visibility = "visible"
+      alert.innerHTML = "Заполните все поля!";
       return false;
     }
 
   if (password != password_confirm) {
-    document.getElementById("error_explanation").innerHTML = "Пароли не совпадают!";
+    alert.style.visibility = "visible"
+     alert.innerHTML = "Пароли не совпадают!";
     return false;
   }
   else 
@@ -21,7 +24,8 @@ function isValid() {
         return true;
       else
       {
-        document.getElementById("error_explanation").innerHTML = "Минимальная длина пароля 6 символов!";
+        alert.style.visibility = "visible"
+        alert.innerHTML = "Минимальная длина пароля 6 символов!";
         return false; 
       }
     }

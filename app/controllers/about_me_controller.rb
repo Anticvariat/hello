@@ -5,7 +5,7 @@ class AboutMeController < ApplicationController
 
   def create
     OrderMailer.contact_me_mail(contact_me_params).deliver_now
-    redirect_to root_path
+    redirect_to root_path, notice: 'Письмо успешно отправлено!'
   end
 
   private

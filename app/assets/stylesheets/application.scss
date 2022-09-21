@@ -1,10 +1,12 @@
 :root {
   --article-back: #7fc7ff;
   --articles-back: #b8dffc;
+  --alert: #cd5b45;
   --black: #000000;
   --gradient: #ddddff;
   --navbar-color: #7fc7ff;
   --red: #ff0000;
+  --notice: #89d44e;
   --sidebar-color: #111;
   --white: #ffffff;
 }
@@ -245,15 +247,25 @@
 }
 
 .notice {
-  border-radius: 15px;
+  background: var(--notice);
+  border-radius: 0;
+  color: var(--white);
   font-family: Onest, Tahoma, serif;
-  font-size: calc(0.5em + 1vh);
-  left: 50%;
-  margin-bottom: 10px;
-  margin-left: -110px;
+  font-size: calc(0.75em + 0.5vh);
+  margin-top: -20px;
+  text-align: center;
   padding: 15px;
-  position: absolute;
-  width: 300px;
+}
+
+.alert {
+  background: var(--alert);
+  border-radius: 0;
+  color: var(--white);
+  font-family: Onest, Tahoma, serif;
+  font-size: calc(0.75em + 0.5vh);
+  margin-top: -20px;
+  text-align: center;
+  padding: 15px;
 }
 
 .title {

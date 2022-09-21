@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to @article
     else
-      render :new, status: :unprocessable_entity
+      redirect_to new_article_path, alert: @article.errors.full_messages.to_sentence
     end
   end
 
@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to @article
     else
-      render :edit, status: :unprocessable_entity
+      redirect_to edit_article_path(@article), alert: @article.errors.full_messages.to_sentence
     end
   end
 

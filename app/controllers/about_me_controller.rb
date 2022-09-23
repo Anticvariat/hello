@@ -5,9 +5,7 @@ class AboutMeController < ApplicationController
   def index; end
 
   def create
-    first_name = current_user.first_name
-    email = current_user.email
-    OrderMailer.contact_me_mail(contact_me_params).deliver_now
+    OrderMailer.contact_me_mail(contact_me_params, current_user).deliver_now
     redirect_to root_path
   end
 

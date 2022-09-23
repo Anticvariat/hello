@@ -44,7 +44,6 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'capybara-email'
   gem 'capybara-screenshot'
   gem 'faker'
   gem 'selenium-webdriver'

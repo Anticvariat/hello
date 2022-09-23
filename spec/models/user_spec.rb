@@ -10,7 +10,7 @@ describe User do
       let(:user) { User.new(email: '1@1.1', password: '123456', first_name: VALID_FIRST_NAME, last_name: VALID_LAST_NAME) }
 
       it 'is valid' do
-        expect(user).to be_valid
+        expect{user.save}.to change(User, :count).by(1)
       end
     end
 
@@ -18,7 +18,7 @@ describe User do
       let(:user) { User.new(email: '1@1.1', password: '123456', first_name: nil, last_name: VALID_LAST_NAME) }
 
       it 'is not valid' do
-        expect(user).not_to be_valid
+        expect{user.save}.to change(User, :count).by(0)
       end
     end
 
@@ -26,7 +26,7 @@ describe User do
       let(:user) { User.new(email: '1@1.1', password: '123456', first_name: VALID_FIRST_NAME, last_name: nil) }
 
       it 'is not valid' do
-        expect(user).not_to be_valid
+        expect{user.save}.to change(User, :count).by(0)
       end
     end
   end

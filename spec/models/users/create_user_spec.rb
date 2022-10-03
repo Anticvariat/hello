@@ -6,6 +6,7 @@ describe User do
   describe "#create" do
     VALID_FIRST_NAME = 'rspec'
     VALID_LAST_NAME = 'user'
+    
     context 'with valid atributes' do
       let(:user) { User.new(email: '1@1.1', password: '123456', first_name: VALID_FIRST_NAME, last_name: VALID_LAST_NAME) }
 

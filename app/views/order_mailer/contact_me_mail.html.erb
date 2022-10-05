@@ -4,11 +4,11 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
   </head>
   <body>
-    <p>User <%= @first_name %> with email <%= @email %> sent you a message!</p>
+    <p>User <%= @user.first_name %> with email <%= @user.email %> sent you a message!</p>
     <p><%= @message %><br>
     </p>
     <p>
-      Go to the link to return at your page -> <%= @url %>.
+      Go to the link to return at your page -> <%= link_to 'Link',@url %>.
     </p>
   </body>
 </html>

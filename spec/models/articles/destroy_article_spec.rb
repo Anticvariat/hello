@@ -19,7 +19,6 @@ describe Article do
 
     context 'when article not present' do
   	  it 'deletes article' do
-  	  	
   	  	expect{article.reload}.to raise_error(ActiveRecord::RecordNotFound)
   	  	expect{article.destroy}.to change(Article, :count).by(0)
   	  end

@@ -15,7 +15,7 @@ function isValid() {
 
   if (password != password_confirm) {
     alert.style.visibility = "visible"
-     alert.innerHTML = "Пароли не совпадают!";
+    alert.innerHTML = "Пароли не совпадают!";
     return false;
   }
   else 

@@ -6,7 +6,7 @@ RSpec.describe 'Contact me', js: true do
   MESSAGE = 'hello message from capybara'
 
   let(:user) { create(:user) }
-  let(:admin) { create(:user, email: ENV['GMAIL_USERNAME'])}
+  let(:admin) { create(:user, email: ENV.fetch('GMAIL_USERNAME', 'admin@example.example'))}
 
   feature 'Send mail to admin' do
     scenario 'With correct params' do

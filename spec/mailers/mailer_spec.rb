@@ -15,7 +15,6 @@ describe OrderMailer do
 
   	context 'with valid params' do
   	  it 'is valid' do
-        p mail.body
   	  	expect(mail.body).to have_content user.first_name
   	  	expect(mail.body).to have_content user.email
   	  	expect(mail.body).to have_content MAILER_MESSAGE

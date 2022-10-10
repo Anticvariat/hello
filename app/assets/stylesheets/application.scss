@@ -127,7 +127,7 @@
 
 .article-title {
   font-family: Onest, Tahoma, serif;
-  font-size: calc(1em + 3vw);
+  font-size: calc(1em + 1vw);
   margin: auto;
   min-width: 300px;
   padding: .5em;
@@ -145,12 +145,20 @@
   background: linear-gradient(10deg, var(--navbar-color) 5%, var(--gradient));
   border-radius: 25px;
   color: var(--black);
+  font-family: Onest, Tahoma, serif;
+  font-size: calc(.25em + 1vh);
   line-height: 2em;
   margin: auto;
   min-width: 300px;
   padding: 30px;
   width: 60%;
   word-wrap: break-word;
+}
+
+.post-date {
+  text-align: right;
+  position: relative;
+  top: 25%;
 }
 
 .blog-post-meta {
@@ -163,7 +171,7 @@
 
 .author-meta {
   color: var(--grey);
-  font-size: calc(.25em + .5vh);
+  font-size: calc(.5em + .5vh);
   text-align: right;
 }
 
@@ -216,17 +224,24 @@
 }
 
 .form-signup,
-.form-signin,
-.form-contact,
-.form-edit-article {
+.form-signin {
   max-width: 330px;
   padding: 15px;
 }
 
+.form-contact,
+.form-edit-article,
 .form-edit {
   max-width: 700px;
   padding-left: 5px;
   padding-right: 5px;
+}
+
+.form-contact textarea,
+.form-edit-article textarea {
+  max-height: 50vw;
+  min-height: 100px;
+  resize: none;
 }
 
 .form-control {
@@ -239,12 +254,6 @@
   margin-top: 10px;
 }
 
-.form-contact textarea,
-.form-edit-article textarea {
-  height: 116px;
-  resize: none;
-}
-
 .form-info {
   max-width: 500px;
 
@@ -255,8 +264,8 @@
 }
 
 .form-floating select {
-  margin-bottom: 10px;
-  margin-top: 10px;
+  font-family: Onest, Tahoma, serif;
+  font-size: calc(.25em + 1vh);
   padding: 10px;
   width: 100%;
 }

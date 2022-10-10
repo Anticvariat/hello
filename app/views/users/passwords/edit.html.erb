@@ -7,16 +7,16 @@
   <form>
     <div class="field form-group">
       <label class="label">Пароль (минимум <%= @minimum_password_length %> символов)</label>
-      <%= f.password_field :password, type: 'password', class: 'form-control bottom-0', id: 'user_password', placeholder: 'password', required: true %>
+      <%= f.password_field :password, type: 'password', class: 'form-control bottom-0', id: 'user_password', placeholder: 'Password', required: true %>
     </div>
 
     <div class="field form-group">
       <label class="label">Подтверждение пароля</label>
-      <%= f.password_field :password_confirmation, type: 'password', class: 'form-control top-0-last', id: 'user_password', placeholder: 'password', required: true %>
+      <%= f.password_field :password_confirmation, type: 'password', class: 'form-control top-0-last', id: 'user_password_confirmation', placeholder: 'Password confirmation', required: true %>
     </div>
 
 <div class="actions">
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Отправить сообщение</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Изменить пароль</button>
   </div>
 
     <%= render 'users/shared/links' %>

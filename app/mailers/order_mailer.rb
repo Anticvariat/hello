@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class OrderMailer < ApplicationMailer
-  default to: ENV.fetch('GMAIL_USERNAME', nil)
+  default to: ENV.fetch('GMAIL_USERNAME', 'admin@example.example')
 
   def contact_me_mail(current_user, params)
     @user = current_user

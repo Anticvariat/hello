@@ -18,7 +18,6 @@ RSpec.describe 'Contact me', js: true do
     scenario 'With correct params' do
       fill_in 'message_body', with: MESSAGE
       click_button 'Отправить'
-      p admin.email
       expect(page).to have_current_path '/'
 
       open_email(admin.email)

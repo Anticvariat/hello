@@ -6,17 +6,19 @@ RSpec.describe 'Contact me', js: true do
   MESSAGE = 'hello message from capybara'
 
   let(:user) { create(:user) }
-  let(:admin) { create(:user, email: ENV.fetch('GMAIL_USERNAME', 'admin@example.example'))}
+  let(:admin) { create(:user, email: ENV['GMAIL_USERNAME'])}
+
+  before do 
+  	ENV['GMAIL_USERNAME'] = 'admin@example.example'
+  	sign_in user
+    visit about_me_contact_me_path
+  end
 
   feature 'Send mail to admin' do
     scenario 'With correct params' do
-      sign_in user
-
-      visit about_me_contact_me_path
-
       fill_in 'message_body', with: MESSAGE
       click_button 'Отправить'
-
+      p admin.email
       expect(page).to have_current_path '/'
 
       open_email(admin.email)

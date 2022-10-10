@@ -6,10 +6,9 @@ RSpec.describe 'Contact me', js: true do
   MESSAGE = 'hello message from capybara'
 
   let(:user) { create(:user) }
-  let(:admin) { create(:user, email: ENV['GMAIL_USERNAME'])}
+  let(:admin) { create(:user, email: ENV.fetch('GMAIL_USERNAME', 'admin@example.example'))}
 
   before do 
-  	ENV['GMAIL_USERNAME'] = 'admin@example.example'
   	sign_in user
     visit about_me_contact_me_path
   end

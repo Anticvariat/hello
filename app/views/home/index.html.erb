@@ -7,15 +7,19 @@
         <p>Привет Гость!</p>
     <% end %>
 </div>
-<div class="blog-posts-list">
-  <% @articles.each do |article| %>
-    <% unless article.draft? %>
-        <div class="blog-post-item">
-          <%= link_to article.title, article %>  <p class="blog-post-meta "><%= article.user.first_name %> <%= article.user.last_name %><br><%= article.created_at.strftime('%d.%m.%Y в %H:%M') %></p>
+<% if @articles.count != 0 %>
+    <div class="blog-posts-list">
+      <% @articles.each do |article| %>
+        <% unless article.draft? %>
+          <div class="blog-post-item">
+            <%= link_to article.title, article %>  <p class="blog-post-meta "><%= article.user.first_name %> <%= article.user.last_name %><br><%= article.created_at.strftime('%d.%m.%Y в %H:%M') %></p>
+          </div>
+          <hr>
+        <% end %>
+      <% end %>
+      <%= paginate @articles, window: 2 %>
+    </div>
+<% else %>
+    <p class="mid">Здесь пока что нет статей, но Вы можете это исправить :)</p>
+<% end %>
 
-        </div>
-        <hr>
-    <% end %>
-  <% end %>
-  <%= paginate @articles, window: 2 %>
-</div>

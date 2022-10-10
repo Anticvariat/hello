@@ -1,16 +1,22 @@
 <h1 class="mid">Список статей</h1>
-<div class="blog-posts-list">
-  <% @articles.each do |article| %>
-    <% unless article.draft? %>
-        <div class="blog-post-item">
-          <%= link_to article.title, article %>
-          <div class="blog-post-meta "><%= article.user.first_name %> <%= article.user.last_name %><br><%= article.created_at.strftime('%d.%m.%Y в %H:%M') %></div>
-          <hr style="z-index: 0;">
-          <div class="article-body"><%= truncate(simple_format(article.body), escape: false, length: 80) %></div>
 
-        </div>
-        <hr>
+<% if @articles.count != 0 %>
+  <div class="blog-posts-list">
+    <% @articles.each do |article| %>
+      <% unless article.draft? %>
+          <div class="blog-post-item">
+            <%= link_to article.title, article %>
+            <div class="blog-post-meta "><%= article.user.first_name %> <%= article.user.last_name %><br><%= article.created_at.strftime('%d.%m.%Y в %H:%M') %></div>
+            <hr style="z-index: 0;">
+            <div class="article-body"><%= truncate(simple_format(article.body), escape: false, length: 80) %></div>
+
+          </div>
+          <hr>
+      <% end %>
     <% end %>
-  <% end %>
-  <%= paginate @articles, window: 2 %>
-</div>
+    <%= paginate @articles, window: 2 %>
+  </div>
+<% else %>
+  <p class="mid">Здесь пока что нет статей, но Вы можете это исправить :)</p>
+<% end %>
+

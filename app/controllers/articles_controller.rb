@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
     @article.user_id = current_user.id
 
     if @article.save
-      redirect_to @article, notice: "Статья успешно создана!"
+      redirect_to @article, notice: 'Статья успешно создана!'
     else
       render :new, status: :unprocessable_entity
     end
@@ -44,7 +44,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to root_path, status: :see_other, notice: "Статья удалена!"
+    redirect_to root_path, status: :see_other, notice: 'Статья удалена!'
   end
 
   private

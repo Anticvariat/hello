@@ -8,21 +8,20 @@ describe Article do
     let(:article) { build(:article) }
 
     context 'when article present' do
-  	  it 'deletes article' do
-  	  	article.save
+      it 'deletes article' do
+        article.save
 
-  	  	expect{article.reload}.not_to raise_error
-  	    expect{article.destroy}.to change(Article, :count).by(-1)
-  	    expect{article.reload}.to raise_error(ActiveRecord::RecordNotFound)
-  	  end
+        expect { article.reload }.not_to raise_error
+        expect { article.destroy }.to change(described_class, :count).by(-1)
+        expect { article.reload }.to raise_error(ActiveRecord::RecordNotFound)
+      end
     end
 
     context 'when article not present' do
-  	  it 'deletes article' do
-  	  	expect{article.reload}.to raise_error(ActiveRecord::RecordNotFound)
-  	  	expect{article.destroy}.to change(Article, :count).by(0)
-  	  end
+      it 'deletes article' do
+        expect { article.reload }.to raise_error(ActiveRecord::RecordNotFound)
+        expect { article.destroy }.not_to change(described_class, :count)
+      end
     end
-
   end
 end

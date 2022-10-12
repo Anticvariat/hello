@@ -31,6 +31,5 @@ RSpec.describe 'Draft' do
       expect(page).to have_content('Access denied')
       expect(page).to have_content('Содержимое недоступно')
     end
-
   end
 end

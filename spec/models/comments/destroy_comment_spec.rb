@@ -9,21 +9,20 @@ describe Comment do
 
     context 'when comment present' do
       it 'deletes comment' do
-      	comment = Comment.create(user: user, article: article, body: '12345')
+        comment = described_class.create(user: user, article: article, body: '12345')
 
-      	expect{comment.destroy}.to change(Comment, :count).by(-1)
-      	expect{comment.reload}.to raise_error(ActiveRecord::RecordNotFound)
-  	  end
+        expect { comment.destroy }.to change(described_class, :count).by(-1)
+        expect { comment.reload }.to raise_error(ActiveRecord::RecordNotFound)
+      end
     end
 
     context 'when comment not present' do
       it 'deletes comment' do
-      	comment = Comment.new()
-      	
-      	expect{comment.destroy}.to change(Comment, :count).by(0)
-      	expect{comment.reload}.to raise_error(ActiveRecord::RecordNotFound)
-  	  end
-    end
+        comment = described_class.new
 
+        expect { comment.destroy }.not_to change(described_class, :count)
+        expect { comment.reload }.to raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
   end
 end

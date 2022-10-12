@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :article do
-    title { 'factorybot article title' }
-    body { 'factorybot article body' }
+    title { Faker::Tea.variety }
+    body { "My favorite tea is #{title}" }
     status { 'public' }
     user factory: :user
   end

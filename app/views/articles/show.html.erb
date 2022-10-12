@@ -1,7 +1,7 @@
 <% if @article.draft? %>
   <% if user_signed_in? && current_user.id == @article.user_id %>
     <hr>
-    <h1 class="article-title">><%= @article.title %></h1>
+    <h1 class="article-title"><%= @article.title %></h1>
     <p class="blog-post-status">Статус: черновик</p>
     <hr>
     <div class="blog-post">
@@ -33,10 +33,7 @@
     <hr>
     <div id="article-body"><%= simple_format(@article.body) %></div>
       <% if user_signed_in? && current_user.id == @article.user_id %>
-        <%= link_to 'Удалить статью', @article, class: 'delete-link', data: {
-            turbo_method: :delete,
-            confirm: 'Вы уверены?'
-          } %>
+        <%= link_to 'Удалить статью', @article, class: 'delete-link', data: { turbo_method: :delete, confirm: 'Вы уверены?' } %>
       <% end %>
   </div>
   <hr>

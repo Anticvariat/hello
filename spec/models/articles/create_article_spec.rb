@@ -3,33 +3,34 @@
 require 'rails_helper'
 
 describe Article do
-  describe ".create" do
-    VALID_ARTICLE_TITLE = 'title'
-    VALID_ARTICLE_BODY = 'valid body'
-
+  describe '.create' do
     let(:user) { create(:user) }
+    let(:valid_article_title) { 'title' }
+    let(:valid_article_body) { 'valid body' }
 
     context 'with valid atributes' do
-      let(:article) { Article.new(user: user, title: VALID_ARTICLE_TITLE, body: VALID_ARTICLE_BODY, status: 'public') }
+      let(:article) do
+        described_class.new(user: user, title: valid_article_title, body: valid_article_body, status: 'public')
+      end
 
       it 'is valid' do
-        expect{article.save}.to change(Article, :count).by(1)
+        expect { article.save }.to change(described_class, :count).by(1)
       end
     end
 
     context 'without body' do
-      let(:article) { Article.new(user: user, title: VALID_ARTICLE_TITLE, body: nil, status: 'public') }
+      let(:article) { described_class.new(user: user, title: valid_article_title, body: nil, status: 'public') }
 
       it 'is valid' do
-        expect{article.save}.to change(Article, :count).by(0)
+        expect { article.save }.not_to change(described_class, :count)
       end
     end
 
     context 'without title' do
-      let(:article) { Article.new(user: user, title: nil, body: VALID_ARTICLE_BODY, status: 'public') }
+      let(:article) { described_class.new(user: user, title: nil, body: valid_article_body, status: 'public') }
 
       it 'is valid' do
-        expect{article.save}.to change(Article, :count).by(0)
+        expect { article.save }.not_to change(described_class, :count)
       end
     end
   end

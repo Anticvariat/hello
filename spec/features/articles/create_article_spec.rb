@@ -22,7 +22,6 @@ RSpec.describe 'Create Article' do
       body_section = find_by_id('article-body')
 
       expect(page).to have_current_path "/articles/#{Article.last.id}"
-      # expect([:notice]).to eq 'Статья успешно создана!'
       expect(page).to have_content 'Статья успешно создана!'
       expect(title_section).to have_content title
       expect(body_section).to have_content body

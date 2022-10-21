@@ -19,7 +19,8 @@ RSpec.describe 'Log in', js: true do
 
       expect(page).to have_content 'Signed in successfully.'
       expect(page).to have_current_path '/'
-      expect(page).to have_content user.email
+      expect(page).to have_content user.first_name
+      expect(page).to have_content user.last_name
     end
 
     scenario 'Sign in with incorrect params' do
@@ -27,7 +28,6 @@ RSpec.describe 'Log in', js: true do
       fill_in 'user_password', with: user2.password
       click_button 'Войти'
 
-      # expect(flash[:notice]).to eq 'Invalid Email or password.'
       expect(page).to have_content 'Invalid Email or password.'
       expect(page).to have_current_path '/users/sign_in'
     end
@@ -37,7 +37,6 @@ RSpec.describe 'Log in', js: true do
       fill_in 'user_password', with: user.password
       click_button 'Войти'
 
-      # expect(flash[:notice]).to eq 'Invalid Email or password.'
       expect(page).to have_content 'Invalid Email or password.'
       expect(page).to have_current_path '/users/sign_in'
     end

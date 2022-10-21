@@ -29,7 +29,6 @@ RSpec.describe 'Create Comment' do
       fill_in 'comment_body', with: invalid_comment
       click_button 'Отправить'
 
-      # expect(flash[:alert]).to eq 'Body is too short (minimum is 5 characters)'
       expect(page).to have_content 'Body is too short (minimum is 5 characters)'
     end
   end

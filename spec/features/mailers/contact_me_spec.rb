@@ -25,10 +25,6 @@ RSpec.describe 'Contact me', js: true do
       expect(current_email.body).to have_content("User #{user.first_name} with email #{user.email} sent you a message!")
       expect(current_email.body).to have_content message
       expect(current_email.body).to have_content('Go to the link to return at your page -> Link.')
-
-      current_email.click_on 'Link'
-
-      expect(page).to have_current_path '/'
     end
   end
 end

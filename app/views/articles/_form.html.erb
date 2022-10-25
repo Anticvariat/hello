@@ -2,7 +2,7 @@
 <main class="form-edit-article w-100 m-auto text-center">
   <div class="row">
     <div class="form-group col-7">
-    <%= form.text_field :title, type: 'title', class: 'form-control', placeholder: 'Название', required: true %>
+      <%= form.text_field :title, type: 'title', class: 'form-control', placeholder: 'Название', required: true %>
     </div>
 
     <div class="form-floating col-5">
@@ -10,12 +10,13 @@
     </div>
 
   </div>
-<div>
-  <div class="form-group">
-    <%= form.text_area :body, type: 'body', class: 'form-control', id: 'auto-height', placeholder: 'Содержание', style: 'margin-top: 10px;' %>
+  <div>
+    <div class="form-group">
+      <%= form.text_area :body, type: 'body', class: 'form-control', id: 'auto-height', placeholder: 'Содержание', style: 'margin-top: 10px;' %>
+    </div>
   </div>
-</div>
-<button class="w-100 btn btn-lg btn-primary" type="submit">Сохранить</button>
+  <label style="padding-top: 10px; width: 100%;"><%= form.file_field :avatar, class: 'form-control', style: 'padding-top: 12px; padding-bottom: 12px;' %></label>
+  <button class="w-100 btn btn-lg btn-primary" type="submit">Сохранить</button>
 </main>
 <div class="notice text-center fixed-bottom">
   <% @article.errors.full_messages_for(:title).each do |message| %>

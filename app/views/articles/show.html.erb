@@ -13,7 +13,7 @@
     <h1 class="mid">Содержимое недоступно</h1>
   <% end %>
 <% else %>
-  <h1 class="article-title"><%= @article.title %></h1>
+  <h1 class="article-title" id="article-title"><%= @article.title %></h1>
   <div class="blog-post">
     <hr>
       <div class="row">
@@ -31,12 +31,14 @@
         </div>
       </div>
     <hr>
-    <div><%= simple_format(@article.body) %></div>
+    <div id="article-body">
+      <%= simple_format(@article.body) %>
+      <% if @article.avatar.present? %>
+        <%= image_tag @article.avatar.variant(resize_to_limit: [1500, 1000]), style: 'width: 100%; border-radius: 10px;' %>
+      <% end %>    
+    </div>
       <% if user_signed_in? && current_user.id == @article.user_id %>
-        <%= link_to 'Удалить статью', @article, class: 'delete-link', data: {
-            turbo_method: :delete,
-            confirm: 'Вы уверены?'
-          } %>
+        <%= link_to 'Удалить статью', @article, class: 'delete-link', data: { turbo_method: :delete, confirm: 'Вы уверены?' } %>
       <% end %>
   </div>
   <hr>

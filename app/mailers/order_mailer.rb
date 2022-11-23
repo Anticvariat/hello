@@ -7,7 +7,7 @@ class OrderMailer < ApplicationMailer
     @user = current_user
     @message = params[:message_body]
     @email = @user.email
-    @url = ENV.fetch('HELLO_HOST', 'https://localhost:3000')
+    @url = ENV.fetch('HELLO_HOST', 'http://localhost:3000')
     mail(subject: "#{@user.first_name} sent you a message")
   end
 end

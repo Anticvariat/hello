@@ -46,7 +46,7 @@ Rails.application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
-  config.action_mailer.default_url_options = { host: ENV.fetch('HELLO_HOST', 'localhost:3000') }
+  config.action_mailer.default_url_options = { host: ENV.fetch('HELLO_HOST', 'http://localhost:3000') }
 
   config.action_mailer.raise_delivery_errors = false
   # Raises error for missing translations.

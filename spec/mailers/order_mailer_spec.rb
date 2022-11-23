@@ -11,6 +11,7 @@ describe OrderMailer do
 
     before do
       mail.deliver_now
+      ENV['HELLO_HOST'] = 'http://localhost:3000'
     end
 
     context 'with valid params' do
@@ -18,8 +19,7 @@ describe OrderMailer do
         expect(mail.body).to have_content user.first_name
         expect(mail.body).to have_content user.email
         expect(mail.body).to have_content message
-        expect(mail.body).to have_content 'Link'
-        expect(mail.body).to have_link('Link', href: ENV.fetch('HELLO_HOST', 'http://localhost:3000'))
+        expect(mail.body).to have_link('Link', href: 'http://localhost:3000')
       end
     end
   end

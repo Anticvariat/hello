@@ -17,12 +17,14 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
-    @article.user_id = current_user.id
+    #@article = Article.new(article_params)
+    #@article.user_id = current_user.id
+    @article = create_article.article
 
-    if @article.save
+    if create_article.success?
       redirect_to @article, notice: "Статья успешно создана!"
     else
+      flash[:notice] = create_article.error
       render :new, status: :unprocessable_entity
     end
   end
@@ -49,7 +51,11 @@ class ArticlesController < ApplicationController
 
   private
 
+  def create_article
+    @create_article = CreateArticle.call(article_params: article_params)
+  end
+
   def article_params
-    params.require(:article).permit(:title, :body, :status, :user_id)
+    params.require(:article).permit(:title, :body, :status).merge(user_id: current_user.id)
   end
 end

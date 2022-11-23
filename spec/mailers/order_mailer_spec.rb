@@ -19,7 +19,7 @@ describe OrderMailer do
         expect(mail.body).to have_content user.email
         expect(mail.body).to have_content message
         expect(mail.body).to have_content 'Link'
-        expect(mail.body).to have_link("Link", href: ENV.fetch('HELLO_HOST', 'http://localhost:3000'))
+        expect(mail.body).to have_link('Link', href: ENV.fetch('HELLO_HOST', 'http://localhost:3000'))
       end
     end
   end

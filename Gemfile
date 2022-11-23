@@ -15,6 +15,7 @@ gem 'bootstrap', '~> 5.2.0'
 gem 'devise'
 gem 'erb_lint', require: false
 gem 'image_processing', '>= 1.2'
+gem "interactor", "~> 3.0"
 gem 'jbuilder', '~> 2.7'
 gem 'kaminari'
 gem 'puma', '~> 4.1'

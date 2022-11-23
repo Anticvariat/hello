@@ -22,8 +22,10 @@ class ArticlesController < ApplicationController
 
     if @article.save
       redirect_to @article
+      flash[:notice] = 'Статья успешно создана!'
     else
-      redirect_to new_article_path, alert: @article.errors.full_messages.to_sentence
+      flash[:alert] = @article.errors.full_messages.to_sentence
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -36,15 +38,18 @@ class ArticlesController < ApplicationController
 
     if @article.update(article_params)
       redirect_to @article
+      flash[:notice] = 'Статья успешно изменена!'
     else
-      redirect_to edit_article_path(@article), alert: @article.errors.full_messages.to_sentence
+      flash[:alert] = @article.errors.full_messages.to_sentence
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @article = Article.find(params[:id])
+    
+    flash[:alert] = "Статья " + '"' + "#{@article.title}" + '"' + " удалена"
     @article.destroy
-
     redirect_to root_path, status: :see_other
   end
 

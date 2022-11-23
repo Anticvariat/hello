@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment = @article.comments.new(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      redirect_to article_path(@article)
+      redirect_to article_path(@article), notice: 'Вы оставили комментарий'
     else
       redirect_to article_path(@article), alert: @comment.errors.full_messages.to_sentence
     end
@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
     @comment = @article.comments.find(params[:id])
     @comment.destroy
     redirect_to article_path(@article), status: :see_other
+    flash[:alert] = 'Комментарий удалён'
   end
 
   private

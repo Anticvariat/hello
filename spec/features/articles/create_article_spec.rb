@@ -4,15 +4,27 @@ require 'rails_helper'
 
 RSpec.describe 'Create Article' do
   let(:user) { create(:user) }
+  let(:title) { 'test' }
+  let(:body) { 'example article' }
+
+  before do
+    sign_in user
+    visit new_article_path
+  end
 
   feature 'Create Article' do
     scenario 'Create Article with correct params' do
-      sign_in user
-      visit new_article_path
-      fill_in 'article[title]', with: 'test'
-      fill_in 'article[body]', with: 'example article'
+      fill_in 'article[title]', with: title
+      fill_in 'article[body]', with: body
       click_button 'Сохранить'
-      expect(page).not_to have_content 'Новая статья'
+
+      title_section = find_by_id('article-title')
+      body_section = find_by_id('article-body')
+
+      expect(page).to have_current_path "/articles/#{Article.last.id}"
+      expect(page).to have_content 'Статья успешно создана!'
+      expect(title_section).to have_content title
+      expect(body_section).to have_content body
     end
   end
 end

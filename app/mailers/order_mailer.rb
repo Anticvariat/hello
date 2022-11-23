@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
 class OrderMailer < ApplicationMailer
-  default to: ENV.fetch('GMAIL_USERNAME', nil)
-  def contact_me_mail(params, current_user)
+  default to: ENV.fetch('GMAIL_USERNAME', 'admin@example.example')
+
+  def contact_me_mail(current_user, params)
     @user = current_user
     @message = params[:message_body]
-    @url = ENV.fetch('HELLO_HOST', nil)
-    mail(subject: "#{@first_name} sent you a message")
+    @email = @user.email
+    @url = ENV.fetch('HELLO_HOST', 'http://localhost:3000')
+    mail(subject: "#{@user.first_name} sent you a message")
   end
 end
